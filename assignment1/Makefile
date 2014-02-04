@@ -1,6 +1,6 @@
 # Enter your UVAID here
 UVAID=10542590
-PROGNAME=opgave1
+PROGNAME=pi
 
 KDIR=mkdir
 PACK=tar -jcvf
