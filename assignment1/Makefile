@@ -5,16 +5,17 @@ PROGNAME=pi
 KDIR=mkdir
 PACK=tar -jcvf
 CC=gcc
-CFLAGS=-Wall -pedantic -std=c99
+PREFIXCFLAGS=-Wall -pedantic -std=c99 -lm
+SUFFIXCFLAGS=-lm
 CP=cp
 RM=rm -rf
 OFILES=$(subst .c,.o,$(wildcard *.c))
 
 $(PROGNAME): $(OFILES)
-	$(CC) $(CFLAGS) $(OFILES) -o $(PROGNAME)
+	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(SUFFIXCFLAGS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(PREFIXCFLAGS) -c $< -o $@
 
 run: $(PROGNAME)
 	./$(PROGNAME)
