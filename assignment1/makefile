@@ -24,11 +24,11 @@ big: $(PROGNAME)
 	./$(PROGNAME) 2000000000
 
 clean:
-	$(RM) *.o $(PROGNAME) $(PROGNAME)-$(UVAID).tar.gz
+	$(RM) *.o $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz
 
 tarball: $(PROGNAME)
 	$(MAKE) clean
-	$(MKDIR) $(PROGNAME)-$(UVAID)
-	$(CP) * $(PROGNAME)-$(UVAID) || true
-	$(PACK) $(PROGNAME)-$(UVAID).tar.gz $(PROGNAME)-$(UVAID)/*
-	$(RM) $(PROGNAME)-$(UVAID)
+	$(MKDIR) $(UVAID)_$(PROGNAME)
+	$(CP) * $(UVAID)_$(PROGNAME) || true
+	$(PACK) $(UVAID)_$(PROGNAME).tar.gz $(UVAID)_$(PROGNAME)/*
+	$(RM) $(UVAID)_$(PROGNAME)
