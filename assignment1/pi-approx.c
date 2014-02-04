@@ -1,3 +1,17 @@
+/*
+ * File: pi-approx.c
+ *
+ * This file implements a program that calculates an estimate
+ * value of by with an simple algorithm.
+ * The number of iterations used for the program affects
+ * the significance of the calculated pi to the real pi
+ *
+ * Author:  Maico Timmerman
+ *          10542590
+ * Date:    04 Feb 2014
+ *
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 /* For INT_MIN and INT_MAX */
@@ -36,7 +50,9 @@ double calcPi(int insideCircle, int iterations) {
     return 4 * ((double)insideCircle / (double)iterations);
 }
 
+/* Main program for calculating pi */
 int main(int argc, char *argv[]) {
+    /* Check if sufficient arguments are given */
     if (argc < ARGS_REQUIRED ) {
         return help();
     } else if (atoi(argv[1]) > INT_MAX || atoi(argv[1]) < 1) {
@@ -64,6 +80,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    /* Calculate pi and print the results */
     double pi = calcPi((double)insideCircle, (double)iterations);
     printf("Pi equals: ~%f, calculation done with %d iterations\n", pi, iterations);
     exit(EXIT_SUCCESS);
