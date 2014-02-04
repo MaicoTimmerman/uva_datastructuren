@@ -1,7 +1,10 @@
 #include <stdlib.h>
 #include <stdio.h>
+/* For INT_MIN and INT_MAX */
 #include <limits.h>
+/* For sqrt() */
 #include <math.h>
+/* For time() */
 #include <time.h>
 
 #define ARGS_REQUIRED 2
