@@ -21,7 +21,7 @@ run: $(PROGNAME)
 	./$(PROGNAME) 2000000
 
 big: $(PROGNAME)
-	./$(PROGNAME) 2000000000
+	./$(PROGNAME) 2147483647
 
 clean:
 	$(RM) *.o $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz
