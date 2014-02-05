@@ -36,7 +36,7 @@ int help() {
     printf("Usage: pi [iterations]\n");
     printf("  iterations: [int] used to calculate pi\n");
     printf("    where: [int] <  %d\n", INT_MAX);
-    printf("    where: [int] > 0\n");
+    printf("    where: [int] > 1\n");
     return EXIT_SUCCESS;
 }
 

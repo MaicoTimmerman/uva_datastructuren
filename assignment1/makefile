@@ -5,7 +5,7 @@ PROGNAME=pi-approx
 MKDIR=mkdir
 PACK=tar -zcvf
 CC=gcc
-PREFIXCFLAGS=-Wall -pedantic -std=c99 -lm
+PREFIXCFLAGS=-Wall -pedantic -std=c99
 SUFFIXCFLAGS=-lm
 CP=cp
 RM=rm -rf
