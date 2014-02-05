@@ -6,26 +6,35 @@ MKDIR=mkdir
 PACK=tar -zcvf
 CC=gcc
 PREFIXCFLAGS=-Wall -pedantic -std=c99
-SUFFIXCFLAGS=-lm
+LIBS=
 CP=cp
 RM=rm -rf
 OFILES=$(subst .c,.o,$(wildcard *.c))
 
 $(PROGNAME): $(OFILES)
-	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(SUFFIXCFLAGS)
+	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(LIBS)
 
 %.o: %.c
 	$(CC) $(PREFIXCFLAGS) -c $< -o $@
 
+.PHONY: run
 run: $(PROGNAME)
+	@echo
 	./$(PROGNAME) 2000000
 
-big: $(PROGNAME)
+.PHONY: runbig
+runbig: $(PROGNAME)
 	./$(PROGNAME) 2147483647
 
+.PHONY: clean
 clean:
+	$(RM) *.o $(UVAID)_$(PROGNAME).tar.gz
+
+.PHONY: remove
+remove:
 	$(RM) *.o $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz
 
+.PHONY: tarball
 tarball: $(PROGNAME)
 	$(MAKE) clean
 	$(MKDIR) $(UVAID)_$(PROGNAME)

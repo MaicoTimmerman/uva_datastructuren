@@ -10,67 +10,17 @@
  * @uvanetid: 10542590
  * @date: 04 Feb 2014
  * @version: 0.1
- *
  */
 
 #include <stdlib.h>
 #include <stdio.h>
-/* For INT_MIN and INT_MAX */
 #include <limits.h>
-/* For sqrt() */
-#include <math.h>
-/* For time() */
 #include <time.h>
+
+#include "pi-approx.h"
 
 #define ARGS_REQUIRED 2
 #define CIRCLE_RANGE 1.0
-
-/*
- * Function: help()
- * ----------------
- * Print the usage of this program
- *
- * @returns succes after printing the help of this program
- */
-int help() {
-    printf("Usage: pi [iterations]\n");
-    printf("  iterations: [int] used to calculate pi\n");
-    printf("    where: [int] <  %d\n", INT_MAX);
-    printf("    where: [int] > 1\n");
-    return EXIT_SUCCESS;
-}
-
-/*
- * Function: testinsideCircle(x,y)
- * -------------------------------
- * Test if the point had a diagonal < 1 using Pythagoras
- *
- * @param x; x-coordinate of the point.
- * @param y; y-coordinate of the point.
- * @return boolean if the point is inside the unitcircle
- */
-int testInsideCircle(double x, double y) {
-    double rsquare = ((x*x) + (y*y));
-    double r = sqrtf(rsquare);
-    if ( r < CIRCLE_RANGE ) {
-        return 1;
-    } else {
-        return 0;
-    }
-}
-
-/*
- * Function: calcPi(insideCircle, iterations)
- * ------------------------------------------
- * Calculate pi from the ratio of point in- and outside the circle
- *
- * @param insideCircle; amount of points inside the unitcircle
- * @param iterations; total amount of random points taken.
- * @return an estimated value of pi
- */
-double calcPi(int insideCircle, int iterations) {
-    return 4 * ((double)insideCircle / (double)iterations);
-}
 
 /*
  * Main program for calculating pi
@@ -100,13 +50,28 @@ int main(int argc, char *argv[]) {
         y = (double)rand()/(double)RAND_MAX;
 
         /* Test if coords are inside unitcircle  */
-        if ( testInsideCircle(x,y) ) {
+        if ( ((x*x) + (y*y)) < CIRCLE_RANGE ) {
             insideCircle++;
         }
     }
 
     /* Calculate pi and print the results */
-    double pi = calcPi((double)insideCircle, (double)iterations);
+    double pi = 4 * ((double)insideCircle / (double)iterations);
     printf("Pi equals: ~%f, calculation done with %d iterations\n", pi, iterations);
+    return EXIT_SUCCESS;
+}
+
+/*
+ * Function: help()
+ * ----------------
+ * Print the usage of this program
+ *
+ * @returns succes after printing the help of this program
+ */
+int help() {
+    printf("Usage: pi [iterations]\n");
+    printf("  iterations: [int] used to calculate pi\n");
+    printf("    where: [int] <  %d\n", INT_MAX);
+    printf("    where: [int] > 1\n");
     return EXIT_SUCCESS;
 }
