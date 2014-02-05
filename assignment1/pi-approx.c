@@ -59,23 +59,21 @@ int main(int argc, char *argv[]) {
         return help();
     }
 
-    int i;
     double x, y;
-    int inside;
     int iterations = atoi(argv[1]);
     int insideCircle = 0;
     srand(time(NULL));
 
     /* Get a new point and test if inside the circle.
      * Add one to the matching value */
+    int i;
     for (i = 0; i < iterations; i++) {
         /* Get new random coords */
         x = (double)rand()/(double)RAND_MAX;
         y = (double)rand()/(double)RAND_MAX;
 
         /* Test if coords are inside circle  */
-        inside = testInsideCircle(x,y);
-        if ( inside ) {
+        if ( testInsideCircle(x,y) ) {
             insideCircle++;
         }
     }
