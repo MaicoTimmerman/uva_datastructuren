@@ -6,9 +6,10 @@
  * The number of iterations used for the program affects
  * the significance of the calculated pi to the real pi
  *
- * Author:  Maico Timmerman
- *          10542590
- * Date:    04 Feb 2014
+ * @author: Maico Timmerman
+ * @uvanetid: 10542590
+ * @date: 04 Feb 2014
+ * @version: 0.1
  *
  */
 
@@ -24,17 +25,30 @@
 #define ARGS_REQUIRED 2
 #define CIRCLE_RANGE 1.0
 
-/* Print the usage of this program */
+/*
+ * Function: help()
+ * ----------------
+ * Print the usage of this program
+ *
+ * @returns succes after printing the help of this program
+ */
 int help() {
     printf("Usage: pi [iterations]\n");
     printf("  iterations: [int] used to calculate pi\n");
     printf("    where: [int] <  %d\n", INT_MAX);
-    printf("    where: [int] > %d\n", INT_MIN);
-    return 1;
-    exit(EXIT_FAILURE);
+    printf("    where: [int] > 0\n");
+    return EXIT_SUCCESS;
 }
 
-/* Test if the point had a diagonal < 1 using Pythagoras */
+/*
+ * Function: testinsideCircle(x,y)
+ * -------------------------------
+ * Test if the point had a diagonal < 1 using Pythagoras
+ *
+ * @param x; x-coordinate of the point.
+ * @param y; y-coordinate of the point.
+ * @return boolean if the point is inside the unitcircle
+ */
 int testInsideCircle(double x, double y) {
     double rsquare = ((x*x) + (y*y));
     double r = sqrtf(rsquare);
@@ -45,12 +59,25 @@ int testInsideCircle(double x, double y) {
     }
 }
 
-/* Calculate pi from the ratio of point in- and outside the circle */
+/*
+ * Function: calcPi(insideCircle, iterations)
+ * ------------------------------------------
+ * Calculate pi from the ratio of point in- and outside the circle
+ *
+ * @param insideCircle; amount of points inside the unitcircle
+ * @param iterations; total amount of random points taken.
+ * @return an estimated value of pi
+ */
 double calcPi(int insideCircle, int iterations) {
     return 4 * ((double)insideCircle / (double)iterations);
 }
 
-/* Main program for calculating pi */
+/*
+ * Main program for calculating pi
+ *
+ * @param argc; number of parameters given to the program
+ * @param argv; array of all parameters given to the program
+ */
 int main(int argc, char *argv[]) {
     /* Check if sufficient arguments are given */
     if (argc < ARGS_REQUIRED ) {
@@ -64,15 +91,15 @@ int main(int argc, char *argv[]) {
     int insideCircle = 0;
     srand(time(NULL));
 
-    /* Get a new point and test if inside the circle.
-     * Add one to the matching value */
+    /* Get a new point and test if inside the unitcircle for every iteration.
+     * add one to the matching value, if inside the unitcircle*/
     int i;
     for (i = 0; i < iterations; i++) {
         /* Get new random coords */
         x = (double)rand()/(double)RAND_MAX;
         y = (double)rand()/(double)RAND_MAX;
 
-        /* Test if coords are inside circle  */
+        /* Test if coords are inside unitcircle  */
         if ( testInsideCircle(x,y) ) {
             insideCircle++;
         }
@@ -81,5 +108,5 @@ int main(int argc, char *argv[]) {
     /* Calculate pi and print the results */
     double pi = calcPi((double)insideCircle, (double)iterations);
     printf("Pi equals: ~%f, calculation done with %d iterations\n", pi, iterations);
-    exit(EXIT_SUCCESS);
+    return EXIT_SUCCESS;
 }
