@@ -19,16 +19,13 @@
 
 #include "pi-approx.h"
 
-#define ARGS_REQUIRED 2
-#define CIRCLE_RANGE 1.0
-
 /*
  * Main program for calculating pi
  *
  * @param argc; number of parameters given to the program
  * @param argv; array of all parameters given to the program
  */
-int main(int argc, char *argv[]) {
+int main(int argc, char **argv) {
     /* Check if sufficient arguments are given */
     if (argc < ARGS_REQUIRED ) {
         return help();
