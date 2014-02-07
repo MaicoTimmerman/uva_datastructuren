@@ -36,7 +36,7 @@ remove:
 
 .PHONY: tarball
 tarball: $(PROGNAME)
-	$(MAKE) clean
+	$(MAKE) remove
 	$(MKDIR) $(UVAID)_$(PROGNAME)
 	$(CP) * $(UVAID)_$(PROGNAME) || true
 	$(PACK) $(UVAID)_$(PROGNAME).tar.gz $(UVAID)_$(PROGNAME)/*
