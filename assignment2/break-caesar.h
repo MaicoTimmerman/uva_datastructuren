@@ -8,6 +8,8 @@
  *
  * @returns succes after printing the help of this program
  */
-int help();
+int help(void);
+
+int getArgs(int *argc, char ***argv, char *freqfile, char *cipherfile);
 
 #endif /* __BREAK_CAESAR_H__ */
