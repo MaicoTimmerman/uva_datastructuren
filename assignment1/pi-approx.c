@@ -40,8 +40,7 @@ int main(int argc, char **argv) {
 
     /* Get a new point and test if inside the unitcircle for every iteration.
      * add one to the matching value, if inside the unitcircle*/
-    int i;
-    for (i = 0; i < iterations; i++) {
+    for (int i = 0; i < iterations; i++) {
         /* Get new random coords */
         x = (double)rand()/(double)RAND_MAX;
         y = (double)rand()/(double)RAND_MAX;
