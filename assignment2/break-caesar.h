@@ -10,6 +10,8 @@
  */
 int help(void);
 
-int getArgs(int *argc, char ***argv, char *freqfile, char *cipherfile);
+int getArgs(int argc, char **argv, char *freqfile, char *cipherfile);
+
+int readFreq(char *freqfile, int *freqs);
 
 #endif /* __BREAK_CAESAR_H__ */

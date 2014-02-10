@@ -20,11 +20,12 @@ $(PROGNAME): $(OFILES)
 .PHONY: run
 run: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME)
+	./$(PROGNAME)  -f test -c test
 
-.PHONY: runbig
-runbig: $(PROGNAME)
-	./$(PROGNAME)
+.PHONY: runv
+runv: $(PROGNAME)
+	@echo "Running the program!"
+	./$(PROGNAME) -v -f test -c test
 
 .PHONY: clean
 clean:
