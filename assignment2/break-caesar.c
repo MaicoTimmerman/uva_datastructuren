@@ -17,13 +17,15 @@
 
 #include "break-caesar.h"
 
+#define MAX_FILE_PATH 32
+
 int verbose = 0;
 
 int main(int argc, char *argv[]) {
 
-    int *freqs = NULL;
-    char *freqfile = NULL;
-    char *cipherfile = NULL;
+    float freqs[26];
+    char freqfile[MAX_FILE_PATH] = "";
+    char cipherfile[MAX_FILE_PATH] = "";
 
     /* Acquire the arguments */
     if (!getArgs(argc, argv, freqfile, cipherfile)) {
@@ -32,29 +34,42 @@ int main(int argc, char *argv[]) {
     }
 
     if (verbose)
-        printf("Freqfile in main()\t = %s\nCipherfile in main()\t = %s\n", freqfile, cipherfile);
+        fprintf(stderr, "Freqfile in main() after getArgs\t = %s\nCipherfile in main()\t = %s\n", freqfile, cipherfile);
 
-    readFreq(freqfile, freqs);
+    if (!readFreq(freqfile, freqs)) {
+        return EXIT_FAILURE;
+    }
 
     return EXIT_SUCCESS;
 }
 
-int readFreq(char *freqfile, int *freqs) {
+int readFreq(char *freqfile, float *freqs) {
 
-    int err = 0;
-    FILE *fp;
+    char ch;
+    int charsFilled = 0;
+    float charfreq;
+    FILE *fp = NULL;
 
-    fprintf(stdout, " Im supposed to read frequencies");
     fp = fopen(freqfile, "r");
 
+    if(fp == NULL) {
+        perror("Error");
+        exit(1);
+    }
 
-    if (err)
+    while( fscanf(fp,"%c %f",&ch,&charfreq) == 2) {
+        freqs[(int)ch] = charfreq;
+        fprintf(stdout, "The letter frequency of %c is %f",ch, charfreq);
+        charsFilled++;
+    }
+
+    if (charsFilled != 26) {
         return 0;
-    else
-        return 1;
+    }
+    return 1;
 }
 
-int getArgs(int argc, char **argv, char *freqfile, char *cipherfile) {
+int getArgs(int argc, char **argv, char freqfile[], char cipherfile[]) {
 
     int opt;
     int err = 0;
@@ -71,26 +86,26 @@ int getArgs(int argc, char **argv, char *freqfile, char *cipherfile) {
                 help();
                 break;
             case 'f':
-                if (optarg) {
+                if (optarg && (strlen(optarg) < MAX_FILE_PATH)) {
                     strcpy(freqfile, optarg);
-                    break;
                 }
+                break;
             case 'c':
-                if (optarg) {
+                if (optarg && (strlen(optarg) < MAX_FILE_PATH)) {
                     strcpy(cipherfile, optarg);
-                    break;
                 }
+                break;
         }
     }
 
     /* If no cipher file is found */
-    if (!cipherfile) {
+    if (cipherfile[0] == '\0') {
         fprintf(stderr, "specify a cipher file with [-c]\n");
         err++;
     }
 
     /* If no frequency file is found */
-    if (!freqfile) {
+    if (freqfile[0] == '\0') {
         fprintf(stderr, "specify a frequency file with [-f]\n");
         err++;
     }

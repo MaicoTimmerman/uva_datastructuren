@@ -20,7 +20,7 @@ $(PROGNAME): $(OFILES)
 .PHONY: run
 run: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME)  -f test -c test
+	./$(PROGNAME) -f test -c test
 
 .PHONY: runv
 runv: $(PROGNAME)

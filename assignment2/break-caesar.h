@@ -1,5 +1,5 @@
-#ifndef __BREAK_CAESAR_H__
-#define __BREAK_CAESAR_H__
+#ifndef BREAK_CAESAR_H
+#define BREAK_CAESAR_H
 
 /*
  * Function: help()
@@ -12,6 +12,6 @@ int help(void);
 
 int getArgs(int argc, char **argv, char *freqfile, char *cipherfile);
 
-int readFreq(char *freqfile, int *freqs);
+int readFreq(char *freqfile, float *freqs);
 
-#endif /* __BREAK_CAESAR_H__ */
+#endif /* BREAK_CAESAR_H */
