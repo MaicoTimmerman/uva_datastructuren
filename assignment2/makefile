@@ -6,7 +6,7 @@ MKDIR=mkdir
 PACK=tar -zcvf
 CC=gcc
 PREFIXCFLAGS=-Wall -pedantic -std=c99
-LIBS=
+LIBS=-lm
 CP=cp
 RM=rm -rf
 OFILES=$(subst .c,.o,$(wildcard *.c))
@@ -20,12 +20,12 @@ $(PROGNAME): $(OFILES)
 .PHONY: run
 run: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -f test -c test
+	./$(PROGNAME) -f freq -c message\(1\).encrypted2
 
 .PHONY: runv
 runv: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -v -f test -c test
+	./$(PROGNAME) -v -f freq -c message\(1\).encrypted2
 
 .PHONY: clean
 clean:

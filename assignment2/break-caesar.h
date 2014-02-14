@@ -14,4 +14,9 @@ int getArgs(int argc, char **argv, char *freqfile, char *cipherfile);
 
 int readFreq(char *freqfile, float *freqs);
 
+int readCipherFreqs(char *cipherfile, float *cipherFreqs);
+
+int getShift(float correctFreqs[], float cipherFreqs[]);
+
+int printDecryptedMessage(char *cipherfile, int shift);
 #endif /* BREAK_CAESAR_H */
