@@ -56,6 +56,10 @@ int main(int argc, char *argv[]) {
     }
 
     shift = getShift(correctFreqs, cipherFreqs);
+    if (shift == -1) {
+        fprintf(stdout, "\nNo best match is found using the algorithm, please give an proper text");
+        return EXIT_FAILURE;
+    }
     printf("\nBest matching shift: %d\n\n", shift);
     printDecryptedMessage(cipherFile, shift);
 
@@ -192,7 +196,7 @@ int readCipherFreqs(char *cipherFile, float *cipherFreqs) {
 
 int getShift(float correctFreqs[], float cipherFreqs[]) {
 
-    int bestMatch = 0;
+    int bestMatch = -1;
     float score;
 
     fprintf(stdout, "Trying offsets:\n");
