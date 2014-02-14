@@ -3,8 +3,8 @@
  *
  * @author: Maico Timmerman
  * @uvanetid: 10542590
- * @date: TODO
- * @version: 0.1
+ * @date: 14 Februari 2014
+ * @version: 1.0
  */
 
 #include <ctype.h>
@@ -25,9 +25,9 @@ int verbose = 0;
 
 int main(int argc, char *argv[]) {
 
+    int shift;
     float correctFreqs[ALPHABET] = {0};
     float cipherFreqs[ALPHABET] = {0};
-    int shift;
     char freqFile[MAX_FILE_PATH_LEN] = "";
     char cipherFile[MAX_FILE_PATH_LEN] = "";
 
@@ -49,7 +49,6 @@ int main(int argc, char *argv[]) {
         for (int i = 0; i < ALPHABET; i++) {
             fprintf(stdout, "The correct letter frequency of %c is %f\n",(char)i + 'a', correctFreqs[i]);
         }
-
         for (int i = 0; i < ALPHABET; i++) {
             fprintf(stdout, "The cipher letter frequency of %c is %f\n",(char)i + 'a', cipherFreqs[i]);
         }
@@ -66,6 +65,17 @@ int main(int argc, char *argv[]) {
     return EXIT_SUCCESS;
 }
 
+/*
+ * Function: getArgs()
+ * -------------------
+ * Get all the arguments from the command line and place them in the given parameters.
+ *
+ * @param argc; number of commandline parameters.
+ * @param argv; array of commandline parameters with length argc.
+ * @param freqFile; location for the filepath to the frequency file.
+ * @param cipherFile; location for the filepath to the encrypted file.
+ * @returns; Succes after printing the help of this program.
+ */
 int getArgs(int argc, char **argv, char freqFile[], char cipherFile[]) {
 
     int opt;
@@ -112,23 +122,32 @@ int getArgs(int argc, char **argv, char freqFile[], char cipherFile[]) {
     return 1;
 }
 
+/*
+ * Function: readFreq()
+ * -------------------
+ * Read all the correct frequencies from a file specified with freqFile.
+ *
+ * @param freqFile; location for the filepath to the frequency file.
+ * @param freqs; location of the array for correct frequencies for comparision
+ * @returns; Succes after printing the help of this program.
+ */
 int readFreq(char *freqFile, float *freqs) {
 
     char ch;
-    int charsFilled = 0;
     float charFreq;
+    int charsFilled = 0;
     FILE *fp = NULL;
 
     fp = fopen(freqFile, "r");
 
     /* if opening the file failed, print the error and exit */
-    if(fp == NULL) {
+    if (fp == NULL) {
         perror("Error");
         return 0;
     }
 
     /* Read the frequency per line and count the total amount of characters read */
-    while( fscanf(fp,"%c %f\n",&ch,&charFreq) == 2) {
+    while (fscanf(fp,"%c %f\n",&ch,&charFreq) == 2) {
         freqs[(int)ch - 'a'] = charFreq;
         charsFilled++;
     }
@@ -147,6 +166,15 @@ int readFreq(char *freqFile, float *freqs) {
     return 1;
 }
 
+/*
+ * Function: readCipherFreq()
+ * -------------------
+ * Read all the letter frequencies from a encrypted file specified with cipherFile.
+ *
+ * @param cipherFile; location for the filepath to the encrypted file.
+ * @param cipherFreqs; location of the array for the encrypted frequencies.
+ * @returns; Succes after printing the help of this program.
+ */
 int readCipherFreqs(char *cipherFile, float *cipherFreqs) {
 
     char ch;
@@ -190,14 +218,23 @@ int readCipherFreqs(char *cipherFile, float *cipherFreqs) {
     }
 
     fclose(fp);
-
     return 1;
 }
 
+/*
+ * Function: getShift()
+ * -------------------
+ * Calculate the shift by trying all shifts and calculating a score.
+ * The score is based on the difference in frequencies.
+ *
+ * @param correctFreqs; An array with correct letter frequencies.
+ * @param cipherFreqs; An array with encrypted letter frequencies.
+ * @returns shift; The shift of the original message.
+ */
 int getShift(float correctFreqs[], float cipherFreqs[]) {
 
-    int bestMatch = -1;
     float score;
+    int bestMatch = 0;
 
     fprintf(stdout, "Trying offsets:\n");
 
@@ -227,6 +264,15 @@ int getShift(float correctFreqs[], float cipherFreqs[]) {
     return bestMatch;
 }
 
+/*
+ * Function: printDecryptedMessage()
+ * -------------------
+ * Prints the entire message, deciphering it with the specified shift.
+ *
+ * @param cipherFile; Location to the encrypted file
+ * @param shift; The shift of the original message which resulted in the encrypted message.
+ * @returns; Succes after printing the help of this program.
+ */
 int printDecryptedMessage(char *cipherFile, int shift) {
 
     char ch;
@@ -269,6 +315,13 @@ int printDecryptedMessage(char *cipherFile, int shift) {
     return 1;
 }
 
+/*
+ * Function: help()
+ * ----------------
+ * Print the usage of this program
+ *
+ * @returns succes after printing the help of this program
+ */
 int help(void) {
     printf("Usage: break-caesar [ -v | -h ] [ -f freqfile ] [ -c cipherfile ]\n");
     printf("Obligatory: [ -f freqfile ] [ -c cipherfile ]\n");
