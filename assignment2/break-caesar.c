@@ -92,13 +92,13 @@ int getArgs(int argc, char **argv, char freqFile[], char cipherFile[]) {
 
     /* If no cipher file is found */
     if (cipherFile[0] == '\0') {
-        fprintf(stderr, "Error: specify a cipher file with [-c]\n");
+        fprintf(stderr, "Error: specify a cipher file with [-c](maximum path length is 30 characters)\n");
         return 0;
     }
 
     /* If no frequency file is found */
     if (freqFile[0] == '\0') {
-        fprintf(stderr, "Error: specify a frequency file with [-f]\n");
+        fprintf(stderr, "Error: specify a frequency file with [-f](maximum path length is 30 characters)\n");
         return 0;
     }
 
@@ -255,10 +255,7 @@ int printDecryptedMessage(char *cipherFile, int shift) {
     /* If the end of file was found while reading the file. */
     if (feof(fp) && verbose) {
         fprintf(stdout, "\nEnd of file was reached\n");
-    }
-
-    /* If an error was found while reading the file. */
-    if (ferror(fp)) {
+    } else if (ferror(fp)) {
         fprintf(stdout, "\nAn error happened while reading the file\n");
         fclose(fp);
         return 0;
