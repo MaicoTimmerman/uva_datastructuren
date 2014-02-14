@@ -1,0 +1,967 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 5 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F4': class PDFType1Font 
+5 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+6 0 obj
+% Page dictionary
+<< /Contents 21 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 20 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Page2': class PDFPage 
+7 0 obj
+% Page dictionary
+<< /Contents 22 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 20 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+8 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://en.wikipedia.org/wiki/Array_data_structure) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 248.6788
+ 645.7736
+ 461.5388
+ 657.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page3': class PDFPage 
+9 0 obj
+% Page dictionary
+<< /Annots [ 8 0 R ]
+ /Contents 23 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 20 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R10': class PDFCatalog 
+10 0 obj
+% Document Root
+<< /Outlines 12 0 R
+ /PageLabels 24 0 R
+ /PageMode /UseNone
+ /Pages 20 0 R
+ /Type /Catalog >>
+endobj
+% 'R11': class PDFInfo 
+11 0 obj
+<< /Author ()
+ /CreationDate (D:20140116170641-01'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (Maze solver) >>
+endobj
+% 'R12': class PDFOutlines 
+12 0 obj
+<< /Count 7
+ /First 13 0 R
+ /Last 19 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+13 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 729.0236
+ 0 ]
+ /Next 14 0 R
+ /Parent 12 0 R
+ /Title (Introduction) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+14 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 642.0236
+ 0 ]
+ /Next 15 0 R
+ /Parent 12 0 R
+ /Prev 13 0 R
+ /Title (Assignment) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+15 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 525.0236
+ 0 ]
+ /Next 16 0 R
+ /Parent 12 0 R
+ /Prev 14 0 R
+ /Title (Data structures) >>
+endobj
+% 'Outline.3': class OutlineEntryObject 
+16 0 obj
+<< /Dest [ 6 0 R
+ /XYZ
+ 62.69291
+ 162.8236
+ 0 ]
+ /Next 17 0 R
+ /Parent 12 0 R
+ /Prev 15 0 R
+ /Title (Support functions) >>
+endobj
+% 'Outline.4': class OutlineEntryObject 
+17 0 obj
+<< /Dest [ 7 0 R
+ /XYZ
+ 62.69291
+ 376.0236
+ 0 ]
+ /Next 18 0 R
+ /Parent 12 0 R
+ /Prev 16 0 R
+ /Title (Maze solvers) >>
+endobj
+% 'Outline.5': class OutlineEntryObject 
+18 0 obj
+<< /Dest [ 9 0 R
+ /XYZ
+ 62.69291
+ 729.0236
+ 0 ]
+ /Next 19 0 R
+ /Parent 12 0 R
+ /Prev 17 0 R
+ /Title (Tips) >>
+endobj
+% 'Outline.6': class OutlineEntryObject 
+19 0 obj
+<< /Dest [ 9 0 R
+ /XYZ
+ 62.69291
+ 522.0236
+ 0 ]
+ /Parent 12 0 R
+ /Prev 18 0 R
+ /Title (Report) >>
+endobj
+% 'R20': class PDFPages 
+20 0 obj
+% page tree
+<< /Count 3
+ /Kids [ 6 0 R
+ 7 0 R
+ 9 0 R ]
+ /Type /Pages >>
+endobj
+% 'R21': class PDFStream 
+21 0 obj
+% page stream
+<< /Length 5733 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 178.2549 0 Td (Maze solver) Tj T* -178.2549 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 708.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Introduction) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 654.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL .437633 Tw (Mazes and labyrinths have fascinated people for centuries. The first reference to a maze can be found in) Tj T* 0 Tw .46686 Tw (Greek mythology where Daedalus is said to have build a maze to trap the mythical Minotaur. Throughout) Tj T* 0 Tw .073876 Tw (the middle ages mazes have been popular and even now you can find them in amusement parks or public) Tj T* 0 Tw (places.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 621.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Assignment) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 591.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .536651 Tw (For this programming assignment you have to implement your own maze solver. The assignment can be) Tj T* 0 Tw (broken down into three main parts:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 585.0236 cm
+Q
+q
+1 0 0 1 62.69291 585.0236 cm
+Q
+q
+1 0 0 1 62.69291 573.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The data structures used to represent the walker and the maze.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 567.0236 cm
+Q
+q
+1 0 0 1 62.69291 555.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The support functions that deal with the walker and the maze.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 549.0236 cm
+Q
+q
+1 0 0 1 62.69291 537.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The maze solvers functions.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 537.0236 cm
+Q
+q
+1 0 0 1 62.69291 504.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Data structures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 450.0236 cm
+q
+BT 1 0 0 1 0 38 Tm 1.094724 Tw 12 TL /F1 10 Tf 0 0 0 rg (First you will have to define the data structures used by the maze solver. The two main data types are) Tj T* 0 Tw 1.282126 Tw /F3 10 Tf (maze_t ) Tj /F1 10 Tf (and ) Tj /F3 10 Tf (walker_t) Tj /F1 10 Tf (. For this assignment we provide you with some incomplete skeleton code that) Tj T* 0 Tw .221894 Tw (you can use as a starting point for your program. You can download the code as a tar file from the course) Tj T* 0 Tw (website.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 372.0236 cm
+q
+BT 1 0 0 1 0 62 Tm 1.321235 Tw 12 TL /F1 10 Tf 0 0 0 rg (For the maze you have to complete the ) Tj /F3 10 Tf (maze_t ) Tj /F1 10 Tf (typedef in ) Tj /F3 10 Tf (maze.h) Tj /F1 10 Tf (. The structure should contain the) Tj T* 0 Tw .105542 Tw (number of rows and the number of columns of the maze. The structure should also contain the maze itself) Tj T* 0 Tw .890514 Tw (as a 2D-array of characters \(see tips in the last section\). The file that contains the actual maze lists the) Tj T* 0 Tw 1.749398 Tw (number of rows and columns in the first line. This makes it easy to dynamically allocate the memory) Tj T* 0 Tw .878221 Tw (needed for the 2D-array when you read the maze from file. The ) Tj /F3 10 Tf (maze.h ) Tj /F1 10 Tf (file also contains some useful) Tj T* 0 Tw (predefined constants that you can use.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 354.0236 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (An actual input maze will be in ASCII format. A small example maze file \() Tj /F3 10 Tf (map1.txt) Tj /F1 10 Tf (\) is:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 248.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 96 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 74 Tm /F3 10 Tf 12 TL (6,10) Tj T* (##########) Tj T* (#    #   #) Tj T* (# ##   #S#) Tj T* (# ########) Tj T* (#       E#) Tj T* (##########) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 204.8236 cm
+q
+BT 1 0 0 1 0 26 Tm .51881 Tw 12 TL /F1 10 Tf 0 0 0 rg (The first line has the format: ) Tj /F3 10 Tf (rows,columns ) Tj /F1 10 Tf (Walls are presented as ) Tj /F3 10 Tf (#) Tj /F1 10 Tf ('s, the start position of the walker) Tj T* 0 Tw .708626 Tw (as ) Tj /F3 10 Tf (S ) Tj /F1 10 Tf (and the exit as ) Tj /F3 10 Tf (E) Tj /F1 10 Tf (. A maze should have walls all around it, this makes it easy to check moves later) Tj T* 0 Tw (on.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 174.8236 cm
+q
+BT 1 0 0 1 0 14 Tm .487485 Tw 12 TL /F1 10 Tf 0 0 0 rg (In the header file ) Tj /F3 10 Tf (walker.h ) Tj /F1 10 Tf (you need to complete the typedef ) Tj /F3 10 Tf (walker_t ) Tj /F1 10 Tf (that represents the walker. It) Tj T* 0 Tw (should contain the position of the walker in the maze.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 141.8236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Support functions) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 111.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.418221 Tw (The support functions are used by the main function and the solvers to deal with data structures. The) Tj T* 0 Tw (support functions for the maze are:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 95.82362 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (init_maze\(\)) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R22': class PDFStream 
+22 0 obj
+% page stream
+<< /Length 7574 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 738.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 14 Tm .883735 Tw 12 TL /F1 10 Tf 0 0 0 rg (This function allocates and initialises a maze of the desired size. The arguments are the number of) Tj T* 0 Tw (rows and columns and it should return a pointer to a ) Tj /F3 10 Tf (maze_t ) Tj /F1 10 Tf (structure.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 722.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (read_maze\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 695.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 14 Tm 1.90561 Tw 12 TL /F1 10 Tf 0 0 0 rg (The ) Tj /F3 10 Tf (read_maze\(\) ) Tj /F1 10 Tf (function takes the filename of the maze file and returns a pointer to a filled) Tj T* 0 Tw /F3 10 Tf (maze_t ) Tj /F1 10 Tf (structure. This function will use ) Tj /F3 10 Tf (init_maze\(\)) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 679.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (print_maze\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 640.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 26 Tm .021163 Tw 12 TL /F1 10 Tf 0 0 0 rg (Takes a ) Tj /F3 10 Tf (maze_t ) Tj /F1 10 Tf (pointer and a ) Tj /F3 10 Tf (walker_t ) Tj /F1 10 Tf (pointer. Print the maze together with the step count to the) Tj T* 0 Tw .732209 Tw (terminal. Mark the current position of the walker with an ) Tj /F3 10 Tf (x) Tj /F1 10 Tf (. This way you can see your walker move) Tj T* 0 Tw (through the maze. This is fun and also useful for debugging your code \(less fun\).) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 624.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (cleanup_maze\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 609.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Takes a pointer to a maze and frees the memory.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 591.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The support functions for the walker are:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 575.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (init_walker\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 548.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .341163 Tw (The initialisation function of the walker takes a pointer to a filled maze structure and returns a pointer) Tj T* 0 Tw (to an initialised walker structure. The maze is used to find the initial position of the walker.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 532.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (check_move\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 505.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .15436 Tw (Takes as arguments: a maze pointer, a walker pointer and a direction. Returns an integer indicating if) Tj T* 0 Tw (the move is valid.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 489.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (move_walker\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 462.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .262927 Tw (Takes as arguments: a maze pointer, a walker pointer and a direction. Performs the move if it's valid,) Tj T* 0 Tw (otherwise returns a value signaling failure.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 446.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (at_exit\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 419.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .984488 Tw (Returns true if the walker is at the exit of the maze. It needs a maze pointer and walker pointer as) Tj T* 0 Tw (arguments.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 403.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (cleanup_walker\(\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 388.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Takes a pointer to a walker and frees the memory.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 355.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Maze solvers) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 313.0236 cm
+q
+BT 1 0 0 1 0 26 Tm .63436 Tw 12 TL /F1 10 Tf 0 0 0 rg (The tar file with the skeleton code also contains ) Tj /F3 10 Tf (main.c ) Tj /F1 10 Tf (with an incomplete ) Tj /F3 10 Tf (main\(\) ) Tj /F1 10 Tf (function. You can) Tj T* 0 Tw 1.432209 Tw (use this function as a starting point. The main function should solve the input maze with each of your) Tj T* 0 Tw (solver algorithms. You should implement at least the following two maze solvers:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 297.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (Random walker) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 246.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 38 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 1.187765 Tw (This is the simplest maze solver, and a good one to start with. The walker just chooses a random) Tj T* 0 Tw .962339 Tw (direction for every move and hopes to reach the exit by chance. You could think of slightly smarter) Tj T* 0 Tw .012927 Tw (versions of the random walker, maybe one that does not go back to the previous location unless there) Tj T* 0 Tw (are no other options.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 230.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (Wall follower) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 191.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL .245868 Tw (This walker uses the well known trick of following the wall. Image the walker always touching the wall) Tj T* 0 Tw .14528 Tw (with his left hand. If the maze is connected \(eg. no disconnected islands\) this method will always lead) Tj T* 0 Tw (you to the exit.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 161.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .049985 Tw (You are of course encouraged to implement more advanced maze walkers. Some solvers can find the exit) Tj T* 0 Tw (on disconnected mazes where the wall follower might fail. They might also be able to find the exit quicker.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 107.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL .481567 Tw (You are free to implement any maze walker that you want, but there are some rules. The maze walker is) Tj T* 0 Tw .637633 Tw (not allowed to use any global knowledge about the maze. But you are allowed to leave 'breadcrumbs' or) Tj T* 0 Tw 1.289988 Tw (other markings on the map if you want to. Basically it should be the same as if you yourself would be) Tj T* 0 Tw (dropped into a maze without a map and had to find the exit.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 77.02362 cm
+q
+BT 1 0 0 1 0 14 Tm .261988 Tw 12 TL /F1 10 Tf 0 0 0 rg (You should print the maze after every move. If you resize your terminal to the height of the maze it allows ) Tj T* 0 Tw .830514 Tw (you to animate the walker moving through the maze. Just redirect the output of your solver to a file and) Tj T* 0 Tw ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R23': class PDFStream 
+23 0 obj
+% page stream
+<< /Length 4436 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .503672 Tw 12 TL /F1 10 Tf 0 0 0 rg (use a pager such as ) Tj /F3 10 Tf (less) Tj /F1 10 Tf (, hold the ) Tj /F3 10 Tf (page-down ) Tj /F1 10 Tf (key and you have a basic animation of the progress of) Tj T* 0 Tw (your walker.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 708.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Tips) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 690.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Here are some tips to help you with this assignment:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 684.0236 cm
+Q
+q
+1 0 0 1 62.69291 684.0236 cm
+Q
+q
+1 0 0 1 62.69291 636.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 38 Tm 1.297356 Tw 12 TL /F1 10 Tf 0 0 0 rg (The easiest way to dynamically allocate a 2D array with dimensions N by M in C is to use "Iliffe") Tj T* 0 Tw 2.64311 Tw (vectors. This is actually a one dimensional array of pointers to other arrays. This link has an) Tj T* 0 Tw 2.060976 Tw (illustration of such an Iliffe vector: ) Tj 0 0 .501961 rg (http://en.wikipedia.org/wiki/Array_data_structure) Tj 0 0 0 rg (. It is always a) Tj T* 0 Tw (good idea to make a quick sketch of the data structures you are implementing yourself.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 630.0236 cm
+Q
+q
+1 0 0 1 62.69291 582.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 33 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+BT 1 0 0 1 0 38 Tm 1.14686 Tw 12 TL /F1 10 Tf 0 0 0 rg (You have already used pseudo random numbers in the first assignment, so you know how to use) Tj T* 0 Tw .244692 Tw (them for the random walker. Normally you would initialise the seed with the output of ) Tj /F3 10 Tf (time\(\) ) Tj /F1 10 Tf (to get) Tj T* 0 Tw 2.287633 Tw (a different sequence for every run. But it can be useful to use the same sequence of random) Tj T* 0 Tw (numbers during debugging. You do this by using a fixed seed.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 576.0236 cm
+Q
+q
+1 0 0 1 62.69291 564.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Check your maze walker with our test mazes, but feel free to generate your own.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 558.0236 cm
+Q
+q
+1 0 0 1 62.69291 534.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .212988 Tw (Try to write a maze solver that finds the exit in the smallest number of steps. It's unlikely that this will) Tj T* 0 Tw (be the random walker.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 534.0236 cm
+Q
+q
+1 0 0 1 62.69291 501.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Report) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 471.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .684724 Tw (For this assignment you will also need to write a report. The report should not be longer than two pages) Tj T* 0 Tw (and should describe:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 455.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (The problem) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 428.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 2.434692 Tw (Describe the problem that you had to solve for this assignment in your own words. This is an) Tj T* 0 Tw (important part of the report, "copy-and-paste" work will not be accepted here.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 412.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (The solution) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 385.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 14 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.092485 Tw (Present your solution to this problem. What design decisions did you make and why did you make) Tj T* 0 Tw (them. This should also serve as high level documentation for your source code.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+ 
+endstream
+endobj
+% 'R24': class PDFPageLabels 
+24 0 obj
+% Document Root
+<< /Nums [ 0
+ 25 0 R
+ 1
+ 26 0 R
+ 2
+ 27 0 R ] >>
+endobj
+% 'R25': class PDFPageLabel 
+25 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R26': class PDFPageLabel 
+26 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+% 'R27': class PDFPageLabel 
+27 0 obj
+% None
+<< /S /D
+ /St 3 >>
+endobj
+xref
+0 28
+0000000000 65535 f
+0000000113 00000 n
+0000000245 00000 n
+0000000410 00000 n
+0000000585 00000 n
+0000000746 00000 n
+0000000915 00000 n
+0000001194 00000 n
+0000001487 00000 n
+0000001740 00000 n
+0000002040 00000 n
+0000002199 00000 n
+0000002458 00000 n
+0000002583 00000 n
+0000002755 00000 n
+0000002940 00000 n
+0000003130 00000 n
+0000003322 00000 n
+0000003509 00000 n
+0000003688 00000 n
+0000003838 00000 n
+0000003961 00000 n
+0000009793 00000 n
+0000017466 00000 n
+0000022005 00000 n
+0000022124 00000 n
+0000022201 00000 n
+0000022278 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(\304\356'\216\305\202V\305]m\235\347\346?e}) (\304\356'\216\305\202V\305]m\235\347\346?e})] 
+
+ /Info 11 0 R
+ /Root 10 0 R
+ /Size 28 >>
+startxref
+22325
+%%EOF
