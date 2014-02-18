@@ -14,18 +14,19 @@
 /*
  * Structure of the maze containing the maze layout in a 2D array,
  * the width and the height.
+ * The first pointer points to the rows and then second to the chars in the rows.
  */
 typedef struct {
     char **map;
-    int x;
-    int y;
+    int row;
+    int col;
 } maze_t;
 
 
 /* Incomplete declarations of the support functions. */
-maze_t* init_maze( ... );
-maze_t* read_maze( ... );
-void print_maze( ... );
-void cleanup_maze ( ... );
+maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze);
+maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path );
+void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker );
+void cleanup_maze (maze_t *maze);
 
-#endif
+#endif /* MAZE_H */

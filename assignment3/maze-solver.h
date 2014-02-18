@@ -1,7 +1,7 @@
 #ifndef MAZE_SOLVER_H
 #define MAZE_SOLVER_H
 
-int getArgs(int argc, char **argv, char *mazeFilePath);
+int get_args(int argc, char **argv, char *maze_file_path);
 
 /*
  * Function: help()

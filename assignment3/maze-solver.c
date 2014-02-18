@@ -3,7 +3,7 @@
 #include <getopt.h>
 #include <string.h>
 
-/* #include "maze.h" */
+#include "maze.h"
 /* #include "walker.h" */
 /* #include "solvers.h" */
 #include "maze-solver.h"
@@ -15,17 +15,25 @@ int verbose = 0;
 
 int main (int argc, char **argv) {
 
-    /* maze_t* maze; */
+    maze_t* maze = NULL;
     /* walker_t* walker; */
     /* int count; */
     /* int dir; */
-    char mazeFilePath[MAX_FILE_PATH_LEN] = "";
+    char maze_file_path[MAX_FILE_PATH_LEN] = "";
 
-    /* check your args, read maze here, init walker.. */
-    if (!getArgs(argc, argv, mazeFilePath)) {
+    /* Read all the command line parameters */
+    if (!get_args(argc, argv, maze_file_path)) {
         fprintf(stderr, "maze-solver: try 'maze-solver -h' for more information.\n");
         return EXIT_FAILURE;
     }
+
+    /* Initialize and read the maze */
+    if (!read_maze(verbose, maze, maze_file_path)) {
+        fprintf(stderr, "maze-solver: could not initialize the maze.\n");
+        return EXIT_FAILURE;
+    }
+
+    /* check your args, read maze here, init walker.. */
 
     /* count = 0; */
     /* while (count++ < MAX_STEPS) { */
@@ -45,7 +53,7 @@ int main (int argc, char **argv) {
 
 }
 
-int getArgs(int argc, char **argv, char *mazeFilePath) {
+int get_args(int argc, char **argv, char *maze_file_path) {
 
     int opt;
     extern char *optarg;
@@ -62,20 +70,20 @@ int getArgs(int argc, char **argv, char *mazeFilePath) {
                 break;
             case 'm':
                 if (optarg && (strlen(optarg) < MAX_FILE_PATH_LEN)) {
-                    strcpy(mazeFilePath, optarg);
+                    strcpy(maze_file_path, optarg);
                 }
                 break;
         }
     }
 
     /* If no frequency file is found */
-    if (mazeFilePath[0] == '\0') {
+    if (maze_file_path[0] == '\0') {
         fprintf(stderr, "Error: specify a maze file path with [-m](maximum path length is 60 characters)\n");
         return 0;
     }
 
     if (verbose)
-        printf("mazeFilePath\t = %s\n", mazeFilePath);
+        printf("maze_file_path\t = %s\n", maze_file_path);
 
     return 1;
 }
