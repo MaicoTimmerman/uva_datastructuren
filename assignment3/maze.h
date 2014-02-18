@@ -11,9 +11,14 @@
 #define START   'S'
 #define EXIT    'E'
 
-/* Incomplete type declaration. */
+/*
+ * Structure of the maze containing the maze layout in a 2D array,
+ * the width and the height.
+ */
 typedef struct {
-    ...
+    char **map;
+    int x;
+    int y;
 } maze_t;
 
 

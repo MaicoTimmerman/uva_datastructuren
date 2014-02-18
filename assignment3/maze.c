@@ -6,7 +6,7 @@ maze_t* init_maze( ... ) {
 }
 
 maze_t* read_maze( ... ) {
-    ...
+    
 }
 
 void print_maze( ... ) {
