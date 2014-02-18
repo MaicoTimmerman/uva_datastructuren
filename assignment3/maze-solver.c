@@ -96,9 +96,9 @@ int get_args(int argc, char **argv, char *maze_file_path) {
  * @returns succes after printing the help of this program
  */
 void help(void) {
-    printf("Usage: break-caesar [ -v | -h ] [ -m mazefile ]\n");
+    printf("Usage: maze-solver [ -v | -h ] [ -m mazefile ]\n");
     printf("Obligatory: [ -m mazefile ]\n");
-    printf("Example: break-caesar -m mapDir/map1.txt\n\n");
+    printf("Example: maze-solver -m mapDir/map1.txt\n\n");
     printf("\t-m filepath\t filepath to a file containing the maze file.\n");
     printf("\t-v\t\t verbose: print more details.\n");
     printf("\t-h\t\t help: print this help page.\n");

@@ -13,7 +13,6 @@ maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze) {
 maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path ) {
 
     int x_maze, y_maze;
-    char ch;
     FILE *fp = NULL;
 
     fp = fopen(maze_file_path, "r");
@@ -26,15 +25,25 @@ maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path ) {
     /* Get the dimensions of the maze map from the first line. */
     if (fscanf(fp, "%d, %d", &x_maze, &y_maze) == 2 ) {
         if (verbose)
-            fprintf(stdout, "Maze dimensions: x: %d, y: %d", x_maze, y_maze);
+            fprintf(stdout, "Maze dimensions: x: %d, y: %d\n", x_maze, y_maze);
     }
 
     /* Allocate memory regarding the size of the maze */
     maze = init_maze(verbose, maze, x_maze, y_maze);
 
     for (int i = 0; i < y_maze; i++) {
-        fgets(maze->map[i], (x_maze + 1), fp);
+        for (int j = 0; j < x_maze; j++) {
+            if ((maze->map[i][j] = fgetc(fp)) == EOF) {
+                if (feof(fp) && verbose) {
+                    fprintf(stdout, "End of file reached\n");
+                }
+                if (ferror(fp) && verbose) {
+                    fprintf(stdout, "An error happened\n");
+                }
+            }
+        }
     }
+    fclose(fp);
     return maze;
 
 }

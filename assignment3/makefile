@@ -5,7 +5,7 @@ PROGNAME=maze-solver
 MKDIR=mkdir
 PACK=tar -zcvf
 CC=gcc
-PREFIXCFLAGS=-Wall -pedantic -std=c99
+PREFIXCFLAGS=-Wall -g -pedantic -std=c99
 LIBS=
 CP=cp
 RM=rm -rf
@@ -15,7 +15,7 @@ $(PROGNAME): $(OFILES)
 	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(LIBS)
 
 %.o: %.c
-	$(CC) $(PREFIXCFLAGS) -c $< -o ../$@
+	$(CC) $(PREFIXCFLAGS) -c $< -o ./$@
 
 .PHONY: run
 run: $(PROGNAME)
