@@ -15,7 +15,7 @@ $(PROGNAME): $(OFILES)
 	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(LIBS)
 
 %.o: %.c
-	$(CC) $(PREFIXCFLAGS) -c $< -o $@
+	$(CC) $(PREFIXCFLAGS) -c $< -o ../$@
 
 .PHONY: run
 run: $(PROGNAME)
