@@ -3,7 +3,7 @@
 
 /* Incomplete definitions of the walker support function . */
 int check_move( ... ) {
-    if (1/*valid*/) {
+    if (1) {
         return 1;
     } else {
         return 0;

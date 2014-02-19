@@ -6,7 +6,10 @@
 maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze) {
 
     maze = malloc(sizeof(maze_t));
-    maze->map = malloc(y_maze * (x_maze + 1) * sizeof(char));
+    maze->map = malloc(y_maze * sizeof(char*));
+    for (int i = 0; i < y_maze; i++) {
+        maze->map[i] = malloc(x_maze * sizeof(char));
+    }
     return maze;
 }
 
@@ -61,6 +64,12 @@ void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker ) {
 
 void cleanup_maze (maze_t *maze) {
     if (maze->map) {
+        for (int i = 0; i < maze->row; i++) {
+            if (maze->map[i]) {
+                free(maze->map[i]);
+                maze->map[i] = NULL;
+            }
+        }
         free(maze->map);
         maze->map = NULL;
     }
