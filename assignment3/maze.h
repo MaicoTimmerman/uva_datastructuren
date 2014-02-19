@@ -18,15 +18,14 @@
  */
 typedef struct {
     char **map;
-    int row;
-    int col;
+    int rows;
+    int cols;
 } maze_t;
 
 
-/* Incomplete declarations of the support functions. */
-maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze);
-maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path );
+maze_t* init_maze(int verbose, int x_maze, int y_maze);
+maze_t* read_maze(int verbose, char *maze_file_path );
 void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker );
-void cleanup_maze (maze_t *maze);
+void cleanup_maze(maze_t *maze);
 
 #endif /* MAZE_H */

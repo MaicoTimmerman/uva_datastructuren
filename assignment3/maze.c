@@ -3,32 +3,34 @@
 
 #include "maze.h"
 
-maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze) {
+maze_t* init_maze(int verbose, int x_maze, int y_maze) {
 
-    maze = (maze_t*)malloc(sizeof(maze_t));
-
-    maze->row = y_maze;
-    maze->col = x_maze;
+    maze_t* maze = (maze_t*)malloc(sizeof(maze_t));
 
     if (verbose)
-        fprintf(stdout, "maze = %p\n", maze);
+        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
+
+    maze->rows = y_maze;
+    maze->cols = x_maze;
 
     maze->map = (char**)malloc(y_maze * sizeof(char *));
     if (verbose)
-        fprintf(stdout, "maze->map = %p\n", maze->map);
+        fprintf(stdout, "maze->map = %p\n", (void *)maze->map);
 
     for (int i = 0; i < y_maze; i++) {
-        maze->map[i] = (char*)malloc((x_maze + 1) * sizeof(char));
+        maze->map[i] = (char*)malloc(x_maze * sizeof(char));
         if (verbose)
-            fprintf(stdout, "maze->map[%d] = %p\n",i , maze->map[i]);
+            fprintf(stdout, "maze->map[%d] = %p\n",i , (void *)maze->map[i]);
     }
     return maze;
 }
 
-maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path ) {
+maze_t* read_maze(int verbose, char *maze_file_path ) {
 
     int x_maze, y_maze;
+    char ch;
     FILE *fp = NULL;
+    maze_t *maze = NULL;
 
     fp = fopen(maze_file_path, "r");
 
@@ -38,47 +40,63 @@ maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path ) {
     }
 
     /* Get the dimensions of the maze map from the first line. */
-    if (fscanf(fp, "%d, %d", &x_maze, &y_maze) == 2 ) {
+    if (fscanf(fp, "%d, %d\n", &y_maze, &x_maze) == 2 ) {
         if (verbose)
             fprintf(stdout, "Maze dimensions: x: %d, y: %d\n", x_maze, y_maze);
     }
 
     /* Allocate memory regarding the size of the maze */
-    if (maze == NULL) {
-        maze = init_maze(verbose, maze, x_maze, y_maze);
-    }
+    maze = init_maze(verbose, x_maze, y_maze);
+    if (verbose)
+        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
 
     for (int i = 0; i < y_maze; i++) {
         for (int j = 0; j < x_maze; j++) {
-            if ((maze->map[i][j] = fgetc(fp)) == EOF) {
+            if ((ch = fgetc(fp)) == EOF) {
                 if (feof(fp) && verbose) {
-                    fprintf(stdout, "End of file reached\n");
+                    fprintf(stdout, "\nEnd of file reached\n");
                 }
                 if (ferror(fp) && verbose) {
-                    fprintf(stdout, "An error happened\n");
+                    fprintf(stdout, "\nAn error happened\n");
+                    return NULL;
                 }
             }
+            maze->map[i][j] = ch;
+            if (verbose)
+                putchar(ch);
         }
+        /* Keep in mind the file had newlines */
+        fseek(fp, 1, SEEK_CUR);
+        if (verbose)
+            putchar('\n');
     }
+    if (verbose)
+        fprintf(stdout, "\n\nMaze read done!\n");
     fclose(fp);
     return maze;
 
 }
 
 void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker ) {
-    for (int i = 0; i < maze->row; i++) {
-        for (int j = 0; j < maze->col; j++) {
+    if (verbose) {
+        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
+        fprintf(stdout, "Walker at row: %d, col: %d!\n", row_walker, col_walker);
+    }
+    for (int i = 0; i < maze->rows; i++) {
+        for (int j = 0; j < maze->cols; j++) {
             if ((i == row_walker) && (j == col_walker)) {
                 putchar('X');
+            } else {
+                putchar(maze->map[i][j]);
             }
-            putchar(maze->map[i][j]);
         }
+        putchar('\n');
     }
 }
 
-void cleanup_maze (maze_t *maze) {
+void cleanup_maze(maze_t *maze) {
     if (maze->map) {
-        for (int i = 0; i < maze->row; i++) {
+        for (int i = 0; i < maze->rows; i++) {
             if (maze->map[i]) {
                 free(maze->map[i]);
                 maze->map[i] = NULL;

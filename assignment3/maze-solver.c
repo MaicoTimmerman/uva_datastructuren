@@ -28,7 +28,7 @@ int main (int argc, char **argv) {
     }
 
     /* Initialize and read the maze */
-    if (!read_maze(verbose, maze, maze_file_path)) {
+    if ((maze = read_maze(verbose, maze_file_path)) == NULL) {
         fprintf(stderr, "maze-solver: could not initialize the maze.\n");
         return EXIT_FAILURE;
     }
