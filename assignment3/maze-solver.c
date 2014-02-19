@@ -4,7 +4,7 @@
 #include <string.h>
 
 #include "maze.h"
-/* #include "walker.h" */
+#include "walker.h"
 /* #include "solvers.h" */
 #include "maze-solver.h"
 
@@ -16,7 +16,7 @@ int verbose = 0;
 int main (int argc, char **argv) {
 
     maze_t* maze = NULL;
-    /* walker_t* walker; */
+    walker_t* walker = NULL;
     /* int count; */
     /* int dir; */
     char maze_file_path[MAX_FILE_PATH_LEN] = "";
@@ -29,14 +29,20 @@ int main (int argc, char **argv) {
 
     /* Initialize and read the maze */
     if ((maze = read_maze(verbose, maze_file_path)) == NULL) {
-        fprintf(stderr, "maze-solver: could not initialize the maze.\n");
+        fprintf(stderr, "maze-solver: could not initialize maze.\n");
+        return EXIT_FAILURE;
+    }
+
+    /* Initialize and read the maze */
+    if ((walker = init_walker(verbose, maze)) == NULL) {
+        fprintf(stderr, "maze-solver: could not initialize walker.\n");
         return EXIT_FAILURE;
     }
 
     if (verbose)
         fprintf(stdout, "maze-solver: Maze succesfully read.\n");
 
-    print_maze(verbose, maze, 1, 1);
+    print_maze(verbose, maze, walker->row, walker->col);
 
     cleanup_maze(maze);
     maze = NULL;

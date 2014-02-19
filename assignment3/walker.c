@@ -14,6 +14,9 @@ walker_t* init_walker(int verbose, maze_t* maze ) {
             if (maze->map[i][j] == 'S') {
                 walker->row = i;
                 walker->col = j;
+                if (verbose) {
+                    fprintf(stdout, "The starting position is at %d,%d\n", i, j);
+                }
                 return walker;
             }
         }
@@ -21,7 +24,7 @@ walker_t* init_walker(int verbose, maze_t* maze ) {
 }
 
 int at_exit(int verbose, maze_t* maze, walker_t* walker) {
-    return 0;
+    return (maze->map[walker->row][walker->col] == 'E') ? 1 : 0;
 }
 
 int check_move(int verbose, maze_t* maze, walker_t* walker, int direction) {
