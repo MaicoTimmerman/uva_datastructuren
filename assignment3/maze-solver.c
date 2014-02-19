@@ -38,6 +38,9 @@ int main (int argc, char **argv) {
 
     print_maze(verbose, maze, 1, 1);
 
+    cleanup_maze(maze);
+    maze = NULL;
+
     /* check your args, read maze here, init walker.. */
 
     /* count = 0; */
