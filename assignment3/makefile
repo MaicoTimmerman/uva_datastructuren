@@ -20,12 +20,12 @@ $(PROGNAME): $(OFILES)
 .PHONY: run
 run: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) 
+	./$(PROGNAME) -m mapDir/map1.txt
 
 .PHONY: runv
 runv: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -v
+	./$(PROGNAME) -vm mapDir/map1.txt
 
 .PHONY: clean
 clean:
