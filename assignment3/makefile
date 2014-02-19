@@ -5,7 +5,7 @@ PROGNAME=maze-solver
 MKDIR=mkdir
 PACK=tar -zcvf
 CC=gcc
-PREFIXCFLAGS=-Wall -g -pedantic -std=c99
+PREFIXCFLAGS=-Wall -ggdb -pedantic -std=c99
 LIBS=
 CP=cp
 RM=rm -rf
@@ -22,10 +22,30 @@ run: $(PROGNAME)
 	@echo "Running the program!"
 	./$(PROGNAME) -m mapDir/map1.txt
 
-.PHONY: runv
-runv: $(PROGNAME)
+.PHONY: runv1
+runv1: $(PROGNAME)
 	@echo "Running the program!"
 	./$(PROGNAME) -vm mapDir/map1.txt
+
+.PHONY: runv2
+runv2: $(PROGNAME)
+	@echo "Running the program!"
+	./$(PROGNAME) -vm mapDir/map2.txt
+
+.PHONY: runv3
+runv3: $(PROGNAME)
+	@echo "Running the program!"
+	./$(PROGNAME) -vm mapDir/map3.txt
+
+.PHONY: runv4
+runv4: $(PROGNAME)
+	@echo "Running the program!"
+	./$(PROGNAME) -vm mapDir/map4.txt
+
+.PHONY: runv5
+runv5: $(PROGNAME)
+	@echo "Running the program!"
+	./$(PROGNAME) -vm mapDir/map5.txt
 
 .PHONY: clean
 clean:
