@@ -33,6 +33,11 @@ int main (int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
+    if (verbose)
+        fprintf(stdout, "maze-solver: Maze succesfully read.\n");
+
+    print_maze(verbose, maze, 1, 1);
+
     /* check your args, read maze here, init walker.. */
 
     /* count = 0; */

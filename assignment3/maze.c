@@ -5,10 +5,22 @@
 
 maze_t* init_maze(int verbose, maze_t *maze, int x_maze, int y_maze) {
 
-    maze = malloc(sizeof(maze_t));
-    maze->map = malloc(y_maze * sizeof(char*));
+    maze = (maze_t*)malloc(sizeof(maze_t));
+
+    maze->row = y_maze;
+    maze->col = x_maze;
+
+    if (verbose)
+        fprintf(stdout, "maze = %p\n", maze);
+
+    maze->map = (char**)malloc(y_maze * sizeof(char *));
+    if (verbose)
+        fprintf(stdout, "maze->map = %p\n", maze->map);
+
     for (int i = 0; i < y_maze; i++) {
-        maze->map[i] = malloc(x_maze * sizeof(char));
+        maze->map[i] = (char*)malloc((x_maze + 1) * sizeof(char));
+        if (verbose)
+            fprintf(stdout, "maze->map[%d] = %p\n",i , maze->map[i]);
     }
     return maze;
 }
@@ -32,7 +44,9 @@ maze_t* read_maze(int verbose, maze_t *maze, char *maze_file_path ) {
     }
 
     /* Allocate memory regarding the size of the maze */
-    maze = init_maze(verbose, maze, x_maze, y_maze);
+    if (maze == NULL) {
+        maze = init_maze(verbose, maze, x_maze, y_maze);
+    }
 
     for (int i = 0; i < y_maze; i++) {
         for (int j = 0; j < x_maze; j++) {
