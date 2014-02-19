@@ -21,6 +21,7 @@ walker_t* init_walker(int verbose, maze_t* maze ) {
             }
         }
     }
+    return NULL;
 }
 
 int at_exit(int verbose, maze_t* maze, walker_t* walker) {
