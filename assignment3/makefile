@@ -12,7 +12,7 @@ RM=rm -rf
 OFILES=$(subst .c,.o,$(wildcard *.c))
 
 $(PROGNAME): $(OFILES)
-	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME) $(LIBS)
+	$(CC) $(PREFIXCFLAGS) $(OFILES) -o $(PROGNAME).out $(LIBS)
 
 %.o: %.c
 	$(CC) $(PREFIXCFLAGS) -c $< -o ./$@
@@ -20,32 +20,22 @@ $(PROGNAME): $(OFILES)
 .PHONY: run
 run: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -m mapDir/map1.txt
+	./$(PROGNAME).out -m mapDir/map1.txt
 
 .PHONY: runv1
 runv1: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -vm mapDir/map1.txt
+	./$(PROGNAME).out -vm mapDir/map1.txt
 
 .PHONY: runv2
 runv2: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -vm mapDir/map2.txt
+	./$(PROGNAME).out -vm mapDir/map2.txt
 
 .PHONY: runv3
 runv3: $(PROGNAME)
 	@echo "Running the program!"
-	./$(PROGNAME) -vm mapDir/map3.txt
-
-.PHONY: runv4
-runv4: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME) -vm mapDir/map4.txt
-
-.PHONY: runv5
-runv5: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME) -vm mapDir/map5.txt
+	./$(PROGNAME).out -vm mapDir/map3.txt
 
 .PHONY: clean
 clean:
@@ -53,11 +43,11 @@ clean:
 
 .PHONY: remove
 remove:
-	$(RM) *.o $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz
+	$(RM) *.o $(PROGNAME).out $(UVAID)_$(PROGNAME).tar.gz
 
 .PHONY: tarball
 tarball: $(PROGNAME)
-	$(MAKE) clean
+	$(MAKE) remove
 	$(MKDIR) $(UVAID)_$(PROGNAME)
 	$(CP) * $(UVAID)_$(PROGNAME) || true
 	$(PACK) $(UVAID)_$(PROGNAME).tar.gz $(UVAID)_$(PROGNAME)/*
