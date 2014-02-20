@@ -8,9 +8,10 @@
 
 
 int random_walker_solver(int verbose, maze_t *maze, walker_t *walker) {
-    /* srand(time(NULL)); */
-    int dir = abs(rand() % 4);
-    if (verbose) fprintf(stdout, "Direction: %d", dir);
+    int random = rand();
+    int dir = random % 4;
+    if (verbose) fprintf(stdout, "random: %d\n", random);
+    if (verbose) fprintf(stdout, "dir: %d\n", dir);
     return dir;
 }
 

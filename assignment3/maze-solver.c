@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <time.h>
 #include <string.h>
 
 #include "maze.h"
@@ -43,6 +44,7 @@ int main (int argc, char **argv) {
     /* check your args, read maze here, init walker.. */
 
     count = 0;
+    srand(time(NULL));
     while (count++ < MAX_STEPS) {
         dir = random_walker_solver(verbose, maze, walker);
         move_walker(verbose, maze, walker, dir);

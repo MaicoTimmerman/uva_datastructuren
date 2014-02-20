@@ -7,9 +7,6 @@ maze_t* init_maze(int verbose, int x_maze, int y_maze) {
 
     maze_t* maze = (maze_t*)malloc(sizeof(maze_t));
 
-    if (verbose)
-        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
-
     maze->rows = y_maze;
     maze->cols = x_maze;
 
@@ -48,7 +45,7 @@ maze_t* read_maze(int verbose, char *maze_file_path ) {
     /* Allocate memory regarding the size of the maze */
     maze = init_maze(verbose, x_maze, y_maze);
     if (verbose)
-        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
+        fprintf(stdout, "maze pointer: %p\n", (void *)maze);
 
     for (int i = 0; i < y_maze; i++) {
         for (int j = 0; j < x_maze; j++) {
@@ -79,7 +76,7 @@ maze_t* read_maze(int verbose, char *maze_file_path ) {
 
 void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker ) {
     if (verbose) {
-        fprintf(stderr, "maze pointer: %p\n", (void *)maze);
+        fprintf(stdout, "maze pointer: %p\n", (void *)maze);
         fprintf(stdout, "Walker at row: %d, col: %d!\n", row_walker, col_walker);
     }
     for (int i = 0; i < maze->rows; i++) {
