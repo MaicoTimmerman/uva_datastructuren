@@ -5,11 +5,8 @@
 
 #include "maze.h"
 #include "walker.h"
-/* #include "solvers.h" */
+#include "solvers.h"
 #include "maze-solver.h"
-
-#define MAX_STEPS 10000
-#define MAX_FILE_PATH_LEN 64
 
 int verbose = 0;
 
@@ -17,8 +14,8 @@ int main (int argc, char **argv) {
 
     maze_t* maze = NULL;
     walker_t* walker = NULL;
-    /* int count; */
-    /* int dir; */
+    int count;
+    int dir;
     char maze_file_path[MAX_FILE_PATH_LEN] = "";
 
     /* Read all the command line parameters */
@@ -33,7 +30,7 @@ int main (int argc, char **argv) {
         return EXIT_FAILURE;
     }
 
-    /* Initialize and read the maze */
+    /* Initialize the walker */
     if ((walker = init_walker(verbose, maze)) == NULL) {
         fprintf(stderr, "maze-solver: could not initialize walker.\n");
         return EXIT_FAILURE;
@@ -42,25 +39,26 @@ int main (int argc, char **argv) {
     if (verbose)
         fprintf(stdout, "maze-solver: Maze succesfully read.\n");
 
-    print_maze(verbose, maze, walker->row, walker->col);
-
-    cleanup_maze(maze);
-    maze = NULL;
 
     /* check your args, read maze here, init walker.. */
 
-    /* count = 0; */
-    /* while (count++ < MAX_STEPS) { */
-    /*     dir = my_super_maze_solver_function(maze, walker); */
-    /*     move_walker(maze, walker, dir); */
-    /*     print_maze(maze, walker->row, walker->col); */
-    /*     printf("Moves: %d\n", count); */
-    /*     if (at_exit(maze, walker)) */
-    /*         break; */
-    /* } */
+    count = 0;
+    while (count++ < MAX_STEPS) {
+        dir = random_walker_solver(verbose, maze, walker);
+        move_walker(verbose, maze, walker, dir);
+        print_maze(verbose, maze, walker->row, walker->col);
+        printf("Moves: %d\n", count);
+        if (at_exit(verbose, maze, walker))
+            break;
+    }
 
-    /* if (count < MAX_STEPS) */
-    /*     printf("Found exit after %d steps\n", count); */
+    if (count < MAX_STEPS)
+        printf("Found exit after %d steps\n", count);
+
+    cleanup_maze(maze);
+    maze = NULL;
+    cleanup_walker(walker);
+    walker = NULL;
 
 
     return EXIT_SUCCESS;

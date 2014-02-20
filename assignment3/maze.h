@@ -7,9 +7,9 @@
 #define SOUTH 2
 #define WEST  3
 
-#define WALL    '#'
-#define START   'S'
-#define EXIT    'E'
+#define WALL  '#'
+#define START 'S'
+#define EXIT  'E'
 
 /*
  * Structure of the maze containing the maze layout in a 2D array,
