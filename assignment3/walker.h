@@ -1,7 +1,19 @@
 #ifndef WALKER_H
 #define WALKER_H
 
-/* Incomplete type declaration. */
+#define NORTH 0
+#define EAST  1
+#define SOUTH 2
+#define WEST  3
+
+#define WALL  '#'
+#define START 'S'
+#define EXIT  'E'
+
+/*
+ * Struct for the walker type containing the location in row and col
+ * Also saves the last move it done
+ */
 typedef struct {
     int col;
     int row;

@@ -29,11 +29,59 @@ int at_exit(int verbose, maze_t* maze, walker_t* walker) {
 }
 
 int check_move(int verbose, maze_t* maze, walker_t* walker, int direction) {
-    return 1;
+    switch (direction) {
+        case NORTH:
+            if (maze->map[walker->row-1][walker->col] != WALL)
+                return 1;
+            break;
+        case EAST:
+            if (maze->map[walker->row][walker->col+1] != WALL)
+                return 1;
+            break;
+        case SOUTH:
+            if (maze->map[walker->row+1][walker->col] != WALL)
+                return 1;
+            break;
+        case WEST:
+            if (maze->map[walker->row][walker->col-1] != WALL)
+                return 1;
+            break;
+        default:
+            return 0;
+    }
+    return 0;
 }
 
 int move_walker(int verbose, maze_t* maze, walker_t* walker, int direction) {
-    return 1;
+    switch (direction) {
+        case NORTH:
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->row = walker->row - 1;
+                return 1;
+            }
+            break;
+        case EAST:
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->col = walker->col + 1;
+                return 1;
+            }
+            break;
+        case SOUTH:
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->row = walker->row + 1;
+                return 1;
+            }
+            break;
+        case WEST:
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->col = walker->col - 1;
+                return 1;
+            }
+            break;
+        default:
+            return 0;
+    }
+    return 0;
 }
 
 void cleanup_walker(walker_t* walker) {
