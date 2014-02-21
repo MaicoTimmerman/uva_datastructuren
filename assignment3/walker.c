@@ -24,11 +24,11 @@ walker_t* init_walker(int verbose, maze_t* maze ) {
     return NULL;
 }
 
-int at_exit(int verbose, maze_t* maze, walker_t* walker) {
+int at_exit(maze_t* maze, walker_t* walker) {
     return (maze->map[walker->row][walker->col] == 'E') ? 1 : 0;
 }
 
-int check_move(maze_t* maze, walker_t* walker, int direction) {
+int check_move(int verbose, maze_t* maze, walker_t* walker, int direction) {
     switch (direction) {
         case NORTH:
             if (maze->map[walker->row-1][walker->col] != WALL)
@@ -44,6 +44,7 @@ int check_move(maze_t* maze, walker_t* walker, int direction) {
             break;
         case WEST:
             if (maze->map[walker->row][walker->col-1] != WALL)
+                if (verbose) fprintf(stdout, "WEST != WALL");
                 return 1;
             break;
         default:
@@ -53,32 +54,37 @@ int check_move(maze_t* maze, walker_t* walker, int direction) {
 }
 
 int move_walker(int verbose, maze_t* maze, walker_t* walker, int direction) {
+    maze->map[walker->row][walker->col] = '.';
     switch (direction) {
         case NORTH:
-            if (verbose) fprintf(stdout, "Walker moving: North");
-            if (check_move(maze, walker, direction)) {
-                walker->row = walker->row - 1;
+            if (verbose) fprintf(stdout, "Walker moving: North\n");
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->row -= 1;
+                walker->last_move = direction;
                 return 1;
             }
             break;
         case EAST:
-            if (verbose) fprintf(stdout, "Walker moving: East");
-            if (check_move(maze, walker, direction)) {
-                walker->col = walker->col + 1;
+            if (verbose) fprintf(stdout, "Walker moving: East\n");
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->col += 1;
+                walker->last_move = direction;
                 return 1;
             }
             break;
         case SOUTH:
-            if (verbose) fprintf(stdout, "Walker moving: South");
-            if (check_move(maze, walker, direction)) {
-                walker->row = walker->row + 1;
+            if (verbose) fprintf(stdout, "Walker moving: South\n");
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->row += 1;
+                walker->last_move = direction;
                 return 1;
             }
             break;
         case WEST:
-            if (verbose) fprintf(stdout, "Walker moving: West");
-            if (check_move(maze, walker, direction)) {
-                walker->col = walker->col - 1;
+            if (verbose) fprintf(stdout, "Walker moving: West\n");
+            if (check_move(verbose, maze, walker, direction)) {
+                walker->col -= 1;
+                walker->last_move = direction;
                 return 1;
             }
             break;

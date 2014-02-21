@@ -46,11 +46,11 @@ int main (int argc, char **argv) {
     count = 0;
     srand(time(NULL));
     while (count++ < MAX_STEPS) {
-        dir = random_walker_solver(verbose, maze, walker);
+        dir = wall_follow_solver(verbose, maze, walker);
         move_walker(verbose, maze, walker, dir);
         print_maze(verbose, maze, walker->row, walker->col);
         printf("Moves: %d\n", count);
-        if (at_exit(verbose, maze, walker))
+        if (at_exit(maze, walker))
             break;
     }
 

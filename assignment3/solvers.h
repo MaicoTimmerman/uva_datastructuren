@@ -12,4 +12,5 @@
 
 /* Solver function that will return a random direction for the next step. */
 int random_walker_solver(int verbose, maze_t *maze, walker_t *walker);
+int wall_follow_solver(int verbose, maze_t *maze, walker_t *walker);
 #endif

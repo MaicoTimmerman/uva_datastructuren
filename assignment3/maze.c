@@ -75,10 +75,8 @@ maze_t* read_maze(int verbose, char *maze_file_path ) {
 }
 
 void print_maze(int verbose, maze_t *maze, int row_walker, int col_walker ) {
-    if (verbose) {
-        fprintf(stdout, "maze pointer: %p\n", (void *)maze);
-        fprintf(stdout, "Walker at row: %d, col: %d!\n", row_walker, col_walker);
-    }
+    if (verbose) fprintf(stdout, "Walker at row: %d, col: %d!\n", row_walker, col_walker);
+
     for (int i = 0; i < maze->rows; i++) {
         for (int j = 0; j < maze->cols; j++) {
             if ((i == row_walker) && (j == col_walker)) {
