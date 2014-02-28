@@ -123,15 +123,9 @@ int get_args(int argc, char **argv, char *maze_file_path, int *solver) {
         return 0;
     }
 
-    /* If no frequency file is found */
-    if (maze_file_path[0] == '\0') {
-        fprintf(stderr, "maze-solver: specify a maze file path with [-m](maximum path length is 60 characters)\n");
-        return 0;
-    }
-
     /* If solver is not found */
     if (*solver == -1) {
-        fprintf(stdout, "maze-solver: Cannot determine solver.\n");
+        fprintf(stdout, "maze-solver: cannot determine solver, specify solver with [-s]\n");
         return 0;
     }
 
