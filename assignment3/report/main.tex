@@ -1,0 +1,217 @@
+%----------------------------------------------------------------------------------------
+%    LATEX LABBOOK TEMPLATE
+%   Versie 1.0 (12 september 2013)
+%   Opmerkingen of feedback naar Robert van Wijk
+%                   (robertvanwijk@uva.nl)
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES EN DOCUMENT CONFIGURATIE
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{xifthen}
+\usepackage{algorithm2e}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+
+\renewcommand{\lstlistingname}{C-code}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  captionpos=b,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+%----------------------------------------------------------------------------------------
+%   HEADER & FOOTER
+%----------------------------------------------------------------------------------------
+\pagestyle{fancy}
+  \lhead{\includegraphics[width=7cm]{logoUvA.jpg}}      %Zorg dat het logo in dezelfde map staat
+  \rhead{\footnotesize \textsc {Technical report\\ \opdracht}}
+  \lfoot{%
+    \footnotesize \studentA%
+    \ifthenelse{\isundefined{\studentB}}{}{\\ \studentB}
+    \ifthenelse{\isundefined{\studentC}}{}{\\ \studentC}
+    \ifthenelse{\isundefined{\studentD}}{}{\\ \studentD}
+    \ifthenelse{\isundefined{\studentE}}{}{\\ \studentE}
+    }
+  \cfoot{}
+  \rfoot{\small \textsc {Page \thepage\ of~\pageref{LastPage}}}
+  \renewcommand{\footrulewidth}{0.5pt}
+
+\fancypagestyle{firststyle}
+ {%
+  \fancyhf{}
+   \renewcommand{\headrulewidth}{0pt}
+   \chead{\includegraphics[width=7cm]{logoUvA.jpg}}
+   \rfoot{\small \textsc {Page \thepage\ of~\pageref{LastPage}}}
+ }
+
+\setlength{\topmargin}{-0.3in}
+\setlength{\textheight}{630pt}
+\setlength{\headsep}{40pt}
+
+%----------------------------------------------------------------------------------------
+%   DOCUMENT INFORMATIE
+%----------------------------------------------------------------------------------------
+%Geef bij ieder command het juiste argument voor deze opdracht. Vul het hier in en het komt op meerdere plekken in het document correct te staan.
+
+\newcommand{\titel}{Maze Solver}            %Zelfbedachte titel
+\newcommand{\opdracht}{Maze Solving in C}       %Naam van opdracht die je van docent gehad hebt
+\newcommand{\docentA}{Andy D. Pimentel}
+\newcommand{\docentB}{Jose Lagerberg}
+\newcommand{\cursus}{Datastructuren}
+\newcommand{\vakcode}{Vakcode of the cursus}        %Te vinden op oa Datanose
+\newcommand{\datum}{\today}                 %Pas aan als je niet de datum van vanaag wilt hebben
+\newcommand{\studentA}{Maico Timmerman}
+\newcommand{\uvanetidA}{10542590}
+% \newcommand{\studentB}{Naam student 2}            %Comment de regel als je allen werkt
+\newcommand{\uvanetidB}{UvAnetID student 2}
+%\newcommand{\studentC}{Naam student 3}     %Uncomment de regel als je met drie studenten werkt
+\newcommand{\uvanetidC}{UvAnetID student 3}
+%\newcommand{\studentD}{Naam student 4}     %Uncomment de regel als je met vier studenten werkt
+\newcommand{\uvanetidD}{UvAnetID student 4}
+%\newcommand{\studentE}{Naam student 5}         %Uncomment de regel als je met vijf studenten werkt
+\newcommand{\uvanetidE}{UvAnetID student 5}
+
+%----------------------------------------------------------------------------------------
+%   AUTOMATISCHE TITEL
+%----------------------------------------------------------------------------------------
+\begin{document}
+\thispagestyle{firststyle}
+\begin{center}
+    \textsc{\Large \opdracht}\\[0.2cm]
+        \rule{\linewidth}{0.5pt} \\[0.4cm]
+            {\huge\bfseries\titel}
+        \rule{\linewidth}{0.5pt} \\[0.2cm]
+    {\large\datum\\[0.4cm]}
+
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft}
+            \emph{Student:}\\
+            {\studentA\\ {\small \uvanetidA\\[0.2cm]}}
+                \ifthenelse{\isundefined{\studentB}}{}{\studentB\\ {\small \uvanetidB\\[0.2cm]}}
+                \ifthenelse{\isundefined{\studentC}}{}{\studentC\\ {\small \uvanetidC\\[0.2cm]}}
+                \ifthenelse{\isundefined{\studentD}}{}{\studentD\\ {\small \uvanetidD\\[0.2cm]}}
+                \ifthenelse{\isundefined{\studentE}}{}{\studentE\\ {\small \uvanetidE\\[0.2cm]}}
+            \emph{Cursus:} \\
+            \cursus\\[0.2cm]
+        \end{flushleft}
+    \end{minipage}
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \emph{Docent 1:} \\
+            \docentA\\[0.2cm]
+            \emph{Docent 2:} \\
+            \docentB\\[0.2cm]
+        \end{flushright}
+    \end{minipage}\\[1 cm]
+\end{center}
+
+%----------------------------------------------------------------------------------------
+%   INHOUDSOPGAVE EN ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\tableofcontents
+%\begin{abstract}
+%\lorem[13]
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%   INTRODUCTIE
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+For a computer there are several ways to find the exit of a maze. All of these methods have advantages and disadvantages. In this assignment several ways will be implemented, including the random walker and a wall following algorithm. These algorithms are implemented in the programming language C.
+
+\subsection{Definitions}
+First of all we need to clarify some terms for this assignment. The maze, a labyrinth, is defined in an  unformatted file containing the dimensions on the first line and the maze in ASCII art on the second line. Walls in the maze are represented by `\#', the starting location is marked with `S' and the exit is marked with `E'. Further we have a walker, this is a simulated object that walks through the maze following directions from the algorithms.
+
+%----------------------------------------------------------------------------------------
+%   METHODE
+%----------------------------------------------------------------------------------------
+
+\section{Method}
+In this assignment 2 algorithms are implemented in C. These two algorithms are made with a couple of rules kept in mind. The algorithm does not know the dimensions of the maze, neither where in the maze it starts. The algorithm can leave breadcrumbs (markings) in the maze to help him find his way.
+
+\subsection{Random walker algorithm}
+The first algorithm implemented in the program is the random algorithm. This algorithm calculates a random direction every step and takes the step. Since there is no truly random generator in C, a seed based on the current time-stamp is taken. This algorithm is considered the least efficient algorithm.
+
+As seen in codeblock~\ref{lst:random} for a random direction, the implementation is very simple. The algorithm generates a random number between 0 and \verb|RAND_MAX| (most system use 2147483647 by default) and takes the remainder of dividing the value by four. If the value is a valid direction, meaning it is not a wall, then return that direction.
+\begin{lstlisting}[caption={Random solver algorithm},label={lst:random}]
+do {
+    direction = random_number() % 4;
+} while (!check_move(maze, walker, direction));
+return direction;
+\end{lstlisting}
+
+
+
+\subsection{Wall following algorithm}
+Another way of implementing a solver is to create an wall follower. When first placed in the maze the algorithm decides to take a step in a random direction. The algorithm only knows the four directions of the wind, north, east, south and west. Therefor we need to give it some way to remember what left and right is. The algorithm calculates what left, right, backwards and forwards is based on its last step. For example, when its last step was east, north is left, east is forwards, west is right and backwards is in the west direction. The key of the wall follower algorithm is to always take a left whenever possible, otherwise take the first direction possible by testing all directions clockwise. First forwards, then right and lastly tries to go backwards, meaning the algorithm ran in a dead end.
+
+For a wall follower algorithm it is a little harder, first the relative directions are determined. Secondly, as seen in codeblock~\ref{lst:wallfollow}, the first valid direction is found and returned.
+\begin{lstlisting}[caption={Wall following algorithm},label={lst:wallfollow}]
+for (int i = 0; i < TOTAL_DIRECTIONS; i++) {
+    if (check_move(maze, walker, directions[i])) {
+        return_value = directions[i];
+        break;
+    }
+}
+
+\end{lstlisting}
+%----------------------------------------------------------------------------------------
+%   RESULTATEN
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+The results for both solving algorithms were as expected. The random solver needed a very varying amount of steps to find the exit. This all depends on the random generated values from the pseudo-random algorithm in C. The advantage of the random maze solver is that it will always find the exit of the maze. It can take very long, but eventually the exit will be found.
+
+The wall follower algorithm found the exit much faster then then random algorithm. But the wall follow algorithm had two big flaws. Whenever the exit was located on an `island', the exit could not be found. An `island' with the walls next to the starting point not connecting to walls at the exit, would cause the algorithm to continue following walls but never reaching the end. A second flaw of the wall follower algorithm is not starting next to a wall. When starting on an open space the algorithm will take a left. The next step would also be a left. This will result the algorithm walking in a tiny two by two circle.
+
+%----------------------------------------------------------------------------------------
+%   DISCUSSIE
+%----------------------------------------------------------------------------------------
+
+\section{Conclusion}
+From the two implemented algorithms neither was perfect. Further improvements could be done to complete the maze. These improvements could be, but are not limited to: leaving markings on visited squares, keeping track of position relative to start and backtracking taken paths.
+
+%----------------------------------------------------------------------------------------
+%   REFERENTIES
+%----------------------------------------------------------------------------------------
+%Meer informatie hierover volgt in blok 5 van jaar 1.
+
+\bibliographystyle{acm}
+
+%----------------------------------------------------------------------------------------
+%   BIJLAGEN
+%----------------------------------------------------------------------------------------
+
+%\section{Bijlage A}
+%\section{Bijlage B}
+%\section{Bijlage C}
+
+\end{document}
