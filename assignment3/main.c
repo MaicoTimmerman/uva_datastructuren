@@ -1,3 +1,14 @@
+/*
+ * File: main.c
+ *
+ * Main file for mazesolving. Initializes all components
+ * and manages them.
+ *
+ * @author: Maico Timmerman
+ * @uvanetid: 10542590
+ * @date: 14 Februari 2014
+ * @version: 1.0
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>

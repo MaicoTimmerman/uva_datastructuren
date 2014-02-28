@@ -1,3 +1,12 @@
+/*
+ * File: maze.c
+ *
+ * Implementation of the maze datastructure
+ *
+ * @author: Maico Timmerman
+ * @uvanetid: 10542590
+ * @date: 14 Februari 2014
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,10 +29,12 @@ maze_t* init_maze(int verbose, int x_maze, int y_maze) {
     maze->rows = y_maze;
     maze->cols = x_maze;
 
+    /* Allocate row pointers */
     maze->map = (char**)malloc(y_maze * sizeof(char *));
     if (verbose)
         fprintf(stdout, "maze->map = %p\n", (void *)maze->map);
 
+    /* Allocate every individual row */
     for (int i = 0; i < y_maze; i++) {
         maze->map[i] = (char*)malloc(x_maze * sizeof(char));
         if (verbose)

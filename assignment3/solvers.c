@@ -1,3 +1,13 @@
+/*
+ * File: solvers.c
+ *
+ * Implementation of all different solving algorithms
+ *
+ * @author: Maico Timmerman
+ * @uvanetid: 10542590
+ * @date: 14 Februari 2014
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -36,6 +46,12 @@ int random_walker_solver(int verbose, maze_t *maze, walker_t *walker) {
  * @return; direction the make the next move.
  */
 int wall_follow_solver(int verbose, maze_t *maze, walker_t *walker) {
+
+    int dir[4];
+    int direction;
+    int return_value;
+    if (verbose) fprintf(stdout, "walker->lastmove: %d\n", walker->last_move);
+
     /*
      * Direction array with index linked to direction depending on last direction:
      * left = dir[0]
@@ -43,10 +59,6 @@ int wall_follow_solver(int verbose, maze_t *maze, walker_t *walker) {
      * right = dir[2]
      * backwards = dir[3]
      */
-    int dir[4];
-    int direction;
-    int return_value;
-    if (verbose) fprintf(stdout, "walker->lastmove: %d\n", walker->last_move);
     switch (walker->last_move) {
         case NORTH:
             dir[0] = WEST, dir[1] = NORTH, dir[2] = EAST, dir[3] = SOUTH;
@@ -68,9 +80,12 @@ int wall_follow_solver(int verbose, maze_t *maze, walker_t *walker) {
                     break;
                 }
             }
-
     }
 
+    /* 
+     * Get first posible direction, starting checking with left,
+     * then forwards, right and last backwards
+     */
     for (int i = 0; i < 4; i++) {
         if (check_move(verbose, maze, walker, dir[i])) {
             if (verbose) fprintf(stdout, "Dir from solver: %d\n", dir[i]);

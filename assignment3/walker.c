@@ -1,3 +1,13 @@
+/*
+ * File: walker.c
+ *
+ * Implementation for the walker datatype
+ *
+ * @author: Maico Timmerman
+ * @uvanetid: 10542590
+ * @date: 14 Februari 2014
+ */
+
 #include<stdio.h>
 #include<stdlib.h>
 

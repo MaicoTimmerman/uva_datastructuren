@@ -31,4 +31,4 @@ int random_walker_solver(int verbose, maze_t *maze, walker_t *walker);
  * @return; direction the make the next move.
  */
 int wall_follow_solver(int verbose, maze_t *maze, walker_t *walker);
-#endif
+#endif /* SOLVERS_H */
