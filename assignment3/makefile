@@ -7,7 +7,7 @@ PACK=tar -zcvf
 CC=gcc
 PREFIXCFLAGS=-Wall -ggdb -pedantic -std=c99
 LIBS=
-CP=cp
+CP=cp -r
 RM=rm -rf
 OFILES=$(subst .c,.o,$(wildcard *.c))
 
@@ -19,24 +19,37 @@ $(PROGNAME): $(OFILES)
 
 .PHONY: run
 run: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME).out -m mapDir/map1.txt
+	@echo "\nRun instructions:"
+	@echo "make help: Run the program with the -h flag."
+	@echo "make run1: Run the algorithm with solver function 1."
+	@echo "make run2: Run the algorithm with solver function 2."
+	@echo "make runv1: Run the algorithm with solver function 1 -v flag enabled."
+	@echo "make runv2: Run the algorithm with solver function 2 -v flag enabled."
+
+.PHONY: run1
+run1: $(PROGNAME)
+	@echo "\nRunning the program with solver 1!"
+	./$(PROGNAME).out -m mapDir/map1.txt -s 1
+
+.PHONY: run2
+run2: $(PROGNAME)
+	@echo "\nRunning the program with solver 2!"
+	./$(PROGNAME).out -m mapDir/map1.txt -s 2
 
 .PHONY: runv1
 runv1: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME).out -vm mapDir/map1.txt
+	@echo "\nRunning the program with solver 1 and -v flag!"
+	./$(PROGNAME).out -vm mapDir/map1.txt -s 1
 
 .PHONY: runv2
 runv2: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME).out -vm mapDir/map2.txt
+	@echo "\nRunning the program with solver 2 and -v flag!"
+	./$(PROGNAME).out -vm mapDir/map1.txt -s 2
 
-.PHONY: runv3
-runv3: $(PROGNAME)
-	@echo "Running the program!"
-	./$(PROGNAME).out -vm mapDir/map3.txt
-
+.PHONY: help
+help: $(PROGNAME)
+	@echo "\nRunning the program with -h flag!"
+	./$(PROGNAME).out -h
 .PHONY: clean
 clean:
 	$(RM) *.o $(UVAID)_$(PROGNAME).tar.gz
