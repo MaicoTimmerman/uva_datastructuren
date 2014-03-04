@@ -24,3 +24,8 @@
 
 # Submit tarballs
 10542590*.tar.gz
+
+# LaTeX output files
+main.aux
+main.pdf
+main.log
