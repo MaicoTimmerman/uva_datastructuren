@@ -1,0 +1,1180 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
+% 'BasicFonts': class PDFDictionary 
+1 0 obj
+% The standard fonts dictionary
+<< /F1 2 0 R
+ /F2 3 0 R
+ /F3 4 0 R
+ /F4 6 0 R
+ /F5 7 0 R >>
+endobj
+% 'F1': class PDFType1Font 
+2 0 obj
+% Font Helvetica
+<< /BaseFont /Helvetica
+ /Encoding /WinAnsiEncoding
+ /Name /F1
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F2': class PDFType1Font 
+3 0 obj
+% Font Helvetica-Bold
+<< /BaseFont /Helvetica-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F2
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F3': class PDFType1Font 
+4 0 obj
+% Font Courier
+<< /BaseFont /Courier
+ /Encoding /WinAnsiEncoding
+ /Name /F3
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Page1': class PDFPage 
+5 0 obj
+% Page dictionary
+<< /Contents 26 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 25 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'F4': class PDFType1Font 
+6 0 obj
+% Font Courier-Bold
+<< /BaseFont /Courier-Bold
+ /Encoding /WinAnsiEncoding
+ /Name /F4
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'F5': class PDFType1Font 
+7 0 obj
+% Font Helvetica-Oblique
+<< /BaseFont /Helvetica-Oblique
+ /Encoding /WinAnsiEncoding
+ /Name /F5
+ /Subtype /Type1
+ /Type /Font >>
+endobj
+% 'Annot.NUMBER1': class PDFDictionary 
+8 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://developer.gnome.org/glib/stable) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 134.7174
+ 273.7736
+ 302.0274
+ 285.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page2': class PDFPage 
+9 0 obj
+% Page dictionary
+<< /Annots [ 8 0 R ]
+ /Contents 27 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 25 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Annot.NUMBER2': class PDFDictionary 
+10 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://www.gutenberg.org/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 66.02291
+ 636.7736
+ 180.5229
+ 648.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page3': class PDFPage 
+11 0 obj
+% Page dictionary
+<< /Annots [ 10 0 R ]
+ /Contents 28 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 25 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'Annot.NUMBER3': class PDFDictionary 
+12 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://en.wikipedia.org/wiki/Hash_table) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 359.7327
+ 441.7736
+ 529.8027
+ 453.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER4': class PDFDictionary 
+13 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://en.wikipedia.org/wiki/Hash_function) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 62.69291
+ 429.7736
+ 246.1029
+ 441.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Annot.NUMBER5': class PDFDictionary 
+14 0 obj
+<< /A << /S /URI
+ /Type /Action
+ /URI (http://mitpress.mit.edu/algorithms/) >>
+ /Border [ 0
+ 0
+ 0 ]
+ /Rect [ 91.59291
+ 405.7736
+ 241.6429
+ 417.7736 ]
+ /Subtype /Link
+ /Type /Annot >>
+endobj
+% 'Page4': class PDFPage 
+15 0 obj
+% Page dictionary
+<< /Annots [ 12 0 R
+ 13 0 R
+ 14 0 R ]
+ /Contents 29 0 R
+ /MediaBox [ 0
+ 0
+ 595.2756
+ 841.8898 ]
+ /Parent 25 0 R
+ /Resources << /Font 1 0 R
+ /ProcSet [ /PDF
+ /Text
+ /ImageB
+ /ImageC
+ /ImageI ] >>
+ /Rotate 0
+ /Trans <<  >>
+ /Type /Page >>
+endobj
+% 'R16': class PDFCatalog 
+16 0 obj
+% Document Root
+<< /Outlines 18 0 R
+ /PageLabels 30 0 R
+ /PageMode /UseNone
+ /Pages 25 0 R
+ /Type /Catalog >>
+endobj
+% 'R17': class PDFInfo 
+17 0 obj
+<< /Author ()
+ /CreationDate (D:20140205093928-01'00')
+ /Creator (\(unspecified\))
+ /Keywords ()
+ /Producer (ReportLab PDF Library - www.reportlab.com)
+ /Subject (\(unspecified\))
+ /Title (Spell Checker) >>
+endobj
+% 'R18': class PDFOutlines 
+18 0 obj
+<< /Count 6
+ /First 19 0 R
+ /Last 24 0 R
+ /Type /Outlines >>
+endobj
+% 'Outline.0': class OutlineEntryObject 
+19 0 obj
+<< /Dest [ 5 0 R
+ /XYZ
+ 62.69291
+ 729.0236
+ 0 ]
+ /Next 20 0 R
+ /Parent 18 0 R
+ /Title (Hash Tables) >>
+endobj
+% 'Outline.1': class OutlineEntryObject 
+20 0 obj
+<< /Dest [ 5 0 R
+ /XYZ
+ 62.69291
+ 274.0236
+ 0 ]
+ /Next 21 0 R
+ /Parent 18 0 R
+ /Prev 19 0 R
+ /Title (Spell Checker files) >>
+endobj
+% 'Outline.2': class OutlineEntryObject 
+21 0 obj
+<< /Dest [ 11 0 R
+ /XYZ
+ 62.69291
+ 765.0236
+ 0 ]
+ /Next 22 0 R
+ /Parent 18 0 R
+ /Prev 20 0 R
+ /Title (Experiments) >>
+endobj
+% 'Outline.3': class OutlineEntryObject 
+22 0 obj
+<< /Dest [ 11 0 R
+ /XYZ
+ 62.69291
+ 217.6236
+ 0 ]
+ /Next 23 0 R
+ /Parent 18 0 R
+ /Prev 21 0 R
+ /Title (Report) >>
+endobj
+% 'Outline.4': class OutlineEntryObject 
+23 0 obj
+<< /Dest [ 15 0 R
+ /XYZ
+ 62.69291
+ 669.0236
+ 0 ]
+ /Next 24 0 R
+ /Parent 18 0 R
+ /Prev 22 0 R
+ /Title (Tips) >>
+endobj
+% 'Outline.5': class OutlineEntryObject 
+24 0 obj
+<< /Dest [ 15 0 R
+ /XYZ
+ 62.69291
+ 480.0236
+ 0 ]
+ /Parent 18 0 R
+ /Prev 23 0 R
+ /Title (References) >>
+endobj
+% 'R25': class PDFPages 
+25 0 obj
+% page tree
+<< /Count 4
+ /Kids [ 5 0 R
+ 9 0 R
+ 11 0 R
+ 15 0 R ]
+ /Type /Pages >>
+endobj
+% 'R26': class PDFStream 
+26 0 obj
+% page stream
+<< /Length 7360 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 741.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 4 Tm /F2 20 Tf 24 TL 168.8049 0 Td (Spell Checker) Tj T* -168.8049 0 Td ET
+Q
+Q
+q
+1 0 0 1 62.69291 708.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Hash Tables) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 618.0236 cm
+q
+BT 1 0 0 1 0 74 Tm 1.09528 Tw 12 TL /F1 10 Tf 0 0 0 rg (For this assignment you will need to implement a spell checker. Our spell checker works by looking up) Tj T* 0 Tw .497073 Tw (every word from a text in a word list. When a word is not found in the list it will be reported as a possible) Tj T* 0 Tw .729987 Tw (spelling error. This is the easy part, and the ) Tj /F3 10 Tf (spell-checker.c ) Tj /F1 10 Tf (file that does this can be found on the) Tj T* 0 Tw .631654 Tw (course website. The tricky part, which you have to implement, is to make these lookups fast. You will be) Tj T* 0 Tw .38332 Tw (spell checking whole books, the longest of which is 565.000 words. And because the word list you will be) Tj T* 0 Tw .813735 Tw (using contains more than 600.000 words, you will have to perform these lookups very efficiently using a) Tj T* 0 Tw (hash table.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 564.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL .831567 Tw (A hash table is an efficient way to implement a dictionary. It allows you to store and lookup \(key, value\)) Tj T* 0 Tw .401988 Tw (pairs. It is a generalized version of an array. With an array the key is always an integer index directly into) Tj T* 0 Tw .227381 Tw (the array. With a hash table you can use any kind of key, and it still allows you to lookup a word nearly as) Tj T* 0 Tw (fast as if you where indexing an ordinary array.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 486.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 62 Tm /F1 10 Tf 12 TL 1.094488 Tw (It works by taking the key and using a function to transform the key into an integer index. The index is) Tj T* 0 Tw .010514 Tw (then used to access the array to retrieve the value associated with the key. The function that takes the key) Tj T* 0 Tw .437045 Tw (and computes the index is called a hash function. A good hash function provides a uniform distribution of) Tj T* 0 Tw .815488 Tw (the hash values and should use all the key data for the index calculation. But is should also be quick to) Tj T* 0 Tw 1.094104 Tw (calculate. For your spell checker you will need to write a hash function that hashes strings \(words\) into) Tj T* 0 Tw (integers.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 444.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL .159988 Tw (The same string will always hash to the same array index. But there may be different strings that will hash) Tj T* 0 Tw 2.299431 Tw (to the same array index. This is called a hash collision. There are multiple ways to deal with hash) Tj T* 0 Tw (collisions:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 428.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (Hashing with collision chaining) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 389.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL .118735 Tw (With collision chaining the hash table contains pointers to key/value pairs, so the actual data is stored) Tj T* 0 Tw .11811 Tw (outside the hash table. When multiple keys hash to the same index these key/value pairs are chained) Tj T* 0 Tw (together in a linked list. A lookup will have to check all the keys of the linked list at that index.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 373.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F2 10 Tf 12 TL (Hashing with open addressing) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 286.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 74 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 74 Tm /F1 10 Tf 12 TL 1.506235 Tw (With open addressing the data is contained in the hash table itself. The addressing into the hash) Tj T* 0 Tw .128409 Tw (table is called open because it is not solely determined by the hashed key. For an insert into the table) Tj T* 0 Tw 1.550574 Tw (the index is checked first. When this location is already occupied the hash table is probed with a) Tj T* 0 Tw .92881 Tw (specific probe sequence until an empty spot to insert the new key/value pair is found. For a lookup) Tj T* 0 Tw .683145 Tw (the hash table is probed until the correct key is found. If the probe sequence hits an empty spot the) Tj T* 0 Tw 1.534651 Tw (key/value pair is not in the table. The three commonly used probe sequences are: linear probing,) Tj T* 0 Tw (quadratic probing, and double hash probing.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 253.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Spell Checker files) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 223.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .74686 Tw 12 TL /F1 10 Tf 0 0 0 rg (The tar file on the course website includes the main spell checker file ) Tj /F3 10 Tf (spell-checker.c) Tj /F1 10 Tf (, a header file) Tj T* 0 Tw /F3 10 Tf (hash.h ) Tj /F1 10 Tf (and simple program that shows you how to time C code ) Tj /F3 10 Tf (test-timing.c) Tj /F1 10 Tf (.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 169.0236 cm
+q
+BT 1 0 0 1 0 38 Tm 3.531235 Tw 12 TL /F1 10 Tf 0 0 0 rg (The file ) Tj /F3 10 Tf (spell-checker.c ) Tj /F1 10 Tf (is provided to save you time and let you focus on the hash table) Tj T* 0 Tw 1.357882 Tw (implementations. The only thing you will have to do is to add the code to perform the timings for your) Tj T* 0 Tw 1.797882 Tw (experiments. You are of course free to modify it as much as you want, or even write your own from) Tj T* 0 Tw (scratch. The spell checker main\(\) function does the following:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 163.0236 cm
+Q
+q
+1 0 0 1 62.69291 163.0236 cm
+Q
+q
+1 0 0 1 62.69291 151.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (1.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Creates a new hash table.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 145.0236 cm
+Q
+q
+1 0 0 1 62.69291 133.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (2.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Reads a word list from file, and inserts every word into the hash table.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 127.0236 cm
+Q
+q
+1 0 0 1 62.69291 103.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (3.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .422846 Tw (Reads the text file and looks up every word in the hash table. When a word is not found in the hash) Tj T* 0 Tw (table it is counted as a spelling error.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 97.02362 cm
+Q
+q
+1 0 0 1 62.69291 85.02362 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 5.66 0 Td (4.) Tj T* -5.66 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Print some hash table statistics, and performs cleanup.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 85.02362 cm
+Q
+ 
+endstream
+endobj
+% 'R27': class PDFStream 
+27 0 obj
+% page stream
+<< /Length 8425 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 717.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .232488 Tw 12 TL /F1 10 Tf 0 0 0 rg (Because we just want to check if the hash table contains a word, we are not interested in the actual value) Tj T* 0 Tw 1.463876 Tw (that is associated with it. That is the reason that every word stores a pointer to the same placeholder) Tj T* 0 Tw .644198 Tw (token, which in our case is the character ) Tj /F3 10 Tf ('a') Tj /F1 10 Tf (. For this assignment you can also choose not to store any) Tj T* 0 Tw (value because we only care if the key, the word we want to spell check, is in the hash table or not.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 687.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .941163 Tw 12 TL /F1 10 Tf 0 0 0 rg (The header file ) Tj /F3 10 Tf (hash.h ) Tj /F1 10 Tf (declares the hash table data structure and the hash functions you will need to) Tj T* 0 Tw (implement:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 671.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (hash_t* hash_table_new\(unsigned int size\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 656.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Returns a pointer to a new hash table of the specified size.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 640.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (void hash_table_destroy\(hash_t* table\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 601.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 26 Tm 1.063876 Tw 12 TL /F1 10 Tf 0 0 0 rg (Frees the memory of all the keys \(the dictionary words\) and the hash table itself. The value that is) Tj T* 0 Tw .166654 Tw (stored in our hash table always the same token ) Tj /F5 10 Tf (shared ) Tj /F1 10 Tf (between all entries. So this data is freed ) Tj /F5 10 Tf (once) Tj T* 0 Tw /F1 10 Tf (in main and not in this function.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 585.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (void hash_table_insert\(hash_t* table, void* key, void* value\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 546.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 26 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL .788988 Tw (Inserts a new key and value into the hash table. Does not insert the new value if the key is already) Tj T* 0 Tw .816988 Tw (present. Neither the key nor the value is copied in the insert function, so a copy of the key is made) Tj T* 0 Tw (first. As mentioned above the value is shared between all words in the table.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 530.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (void* hash_table_lookup\(hash_t* table, void* key\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 515.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Looks up the key and returns the value pointer. If the key is not found ) Tj /F3 10 Tf (NULL ) Tj /F1 10 Tf (is returned.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 499.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (unsigned int hash_table_size\(hash_t* table\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 484.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Returns the size of the hash table.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 468.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F4 10 Tf 12 TL (unsigned int hash_table_fill\(hash_t* table\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 453.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+BT 1 0 0 1 0 2 Tm  T* ET
+q
+1 0 0 1 20 0 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Returns the number of elements in the hash table.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 423.0236 cm
+q
+BT 1 0 0 1 0 14 Tm .569985 Tw 12 TL /F1 10 Tf 0 0 0 rg (For this assignment you will need to implement the collision chaining hashing technique ) Tj /F5 10 Tf (and ) Tj /F1 10 Tf (at least one) Tj T* 0 Tw (of the following probing techniques:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 417.0236 cm
+Q
+q
+1 0 0 1 62.69291 417.0236 cm
+Q
+q
+1 0 0 1 62.69291 405.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Open addressing with linear probing.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 399.0236 cm
+Q
+q
+1 0 0 1 62.69291 387.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Open addressing with quadratic probing.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 381.0236 cm
+Q
+q
+1 0 0 1 62.69291 369.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Open addressing with double hash probing.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 369.0236 cm
+Q
+q
+1 0 0 1 62.69291 303.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL .796457 Tw (It is up to you to decide the organisation of the different implementations. You can choose to implement) Tj T* 0 Tw 1.462765 Tw (each hashing technique in its own C file or you could make the probing sequence a parameter of the) Tj T* 0 Tw .89528 Tw (implementation that can be set with a function. Or even make the hashing function itself a parameter of) Tj T* 0 Tw .88561 Tw (the hash table. This will make it easier to perform the timing experiments with different parameters later) Tj T* 0 Tw (on, but could also make your code more complex.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 237.0236 cm
+q
+BT 1 0 0 1 0 50 Tm .78784 Tw 12 TL /F1 10 Tf 0 0 0 rg (We have included a hash table implementation in ) Tj /F3 10 Tf (hash-glib.c ) Tj /F1 10 Tf (that contains wrapper functions to the) Tj T* 0 Tw .47816 Tw (glib hash table \() Tj 0 0 .501961 rg (http://developer.gnome.org/glib/stable) Tj 0 0 0 rg (\). The included Makefile will compile this source file) Tj T* 0 Tw 1.191318 Tw (into a library and link it with the spell checker to create a spell-checker called ) Tj /F3 10 Tf (spell-checker-glib) Tj /F1 10 Tf (.) Tj T* 0 Tw 1.124431 Tw (You can use this implementation to check if your hash table is functionally correct. You can also use it) Tj T* 0 Tw (compare the execution speed. Can you explain why this comparison is not completely fair?) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 183.0236 cm
+q
+BT 1 0 0 1 0 38 Tm .783145 Tw 12 TL /F1 10 Tf 0 0 0 rg (Although you can make changes to the header file, you need to use a single ) Tj /F3 10 Tf (hash.h ) Tj /F1 10 Tf (header file for all) Tj T* 0 Tw .790651 Tw (the different implementations. The main interface to the hash table should not depend on the underlying) Tj T* 0 Tw 1.606651 Tw (implementation. If you do choose to add functions to the interface header file that are implementation) Tj T* 0 Tw (dependent, you can use dummy functions for the implementations that don't need that specific function.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 117.0236 cm
+q
+BT 1 0 0 1 0 50 Tm 1.886651 Tw 12 TL /F1 10 Tf 0 0 0 rg (The file ) Tj /F3 10 Tf (test-timing.c ) Tj /F1 10 Tf (shows how to time C code. It uses two different functions, ) Tj /F3 10 Tf (clock\(\) ) Tj /F1 10 Tf (and) Tj T* 0 Tw .211318 Tw /F3 10 Tf (getrusage\(\) ) Tj /F1 10 Tf (to time three different sections of code. These functions measure CPU time, not wall clock) Tj T* 0 Tw .227633 Tw (time. The ) Tj /F3 10 Tf (getrusage\(\) ) Tj /F1 10 Tf (function also splits the CPU time into user CPU time and system CPU time, but) Tj T* 0 Tw 1.15936 Tw (that distinction is not needed for this assignment. Run the program and make sure you understand the) Tj T* 0 Tw (timings that are produced. And as always check the manual pages of these functions.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 87.02362 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .505868 Tw (You will need to submit a Makefile with your assignment that will generate all your different spell checker) Tj T* 0 Tw (implementations automatically.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R28': class PDFStream 
+28 0 obj
+% page stream
+<< /Length 5498 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 744.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Experiments) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 690.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL .39686 Tw (Speed is what makes hash tables attractive data structures to store dictionaries. Hash tables can be very) Tj T* 0 Tw 1.74528 Tw (fast if they are implemented correctly, but if you use a badly designed hash function, a flawed probe) Tj T* 0 Tw .048735 Tw (sequence or just store to many elements, performance can be badly degraded. This means that the timing) Tj T* 0 Tw (experiments are an important part of the assignment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 624.0236 cm
+q
+BT 1 0 0 1 0 50 Tm 5.325542 Tw 12 TL /F1 10 Tf 0 0 0 rg (The tar file also contains the word list file and two text files. The word list file is called) Tj T* 0 Tw .87748 Tw /F3 10 Tf (british-english-insane) Tj /F1 10 Tf (, where although it contains some crazy words, insane is just an indication) Tj T* 0 Tw 4.948735 Tw (of its size. The text files you will be spell checking are two books from Project Gutenberg) Tj T* 0 Tw 2.176136 Tw (\() Tj 0 0 .501961 rg (http://www.gutenberg.org/) Tj 0 0 0 rg (\): "The origin of species" by Charles Darwin and "War and Peace" by Leo) Tj T* 0 Tw (Tolstoy.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 558.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL .221417 Tw (The ratio of the number of elements and the size of the hash table is called the load or fill factor. Because) Tj T* 0 Tw .565488 Tw (a probing hash table stores all elements in the table itself it cannot have a load factor higher than 1. The) Tj T* 0 Tw 2.66248 Tw (four implementations perform differently when the load factor increases, so timing experiments with) Tj T* 0 Tw 1.201318 Tw (different hash table sizes will be interesting. Other aspects that you could experiment with are different) Tj T* 0 Tw (hash functions. When the key is a string a common choice for a hash function is:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 452.8236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 96 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 74 Tm /F3 10 Tf 12 TL (unsigned int hash_func\(char* key\) {) Tj T* (    unsigned int hash = initial;) Tj T*  T* (    for \(; *key; ++key\)) Tj T* (        hash = multiplier*hash + *key;) Tj T* (    return hash % table_size;) Tj T* (}) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 420.8236 cm
+q
+BT 1 0 0 1 0 14 Tm 4.209983 Tw 12 TL /F1 10 Tf 0 0 0 rg (You can try to improve performance by trying different values of the constants ) Tj /F3 10 Tf (initial ) Tj /F1 10 Tf (and) Tj T* 0 Tw /F3 10 Tf (multiplier) Tj /F1 10 Tf (. Or you could try to improve performance by using a different hash function entirely.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 390.8236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .577633 Tw (A sample run spell checking "The origin of species" using a collision chaining hash table should look like) Tj T* 0 Tw (this:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 261.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 120 re B*
+Q
+q
+0 0 0 rg
+BT 1 0 0 1 0 98 Tm /F3 10 Tf 12 TL (./spell-checker-chaining input/british-english-insane \\) Tj T* (        input/origin-of-species-ascii.txt 932587) Tj T* (Selected table size: 932587) Tj T* (Hash table contains 611723 words) Tj T* (Hash table load factor 0.655942) Tj T* (bytes read 965836) Tj T* (words read 161656) Tj T* (typo's 439) Tj T* (seconds:               1.510000) Tj T* ET
+Q
+Q
+Q
+Q
+Q
+q
+1 0 0 1 62.69291 229.6236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .908876 Tw (The first argument is the dictionary, the second argument is the text file to check for spelling errors and) Tj T* 0 Tw (the third argument is the size of the hash table.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 196.6236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Report) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 166.6236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.170542 Tw (For this assignment the report counts for 25% of the grade. So don't create it as an afterthought. Your) Tj T* 0 Tw (report should contain the following sections:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 160.6236 cm
+Q
+q
+1 0 0 1 62.69291 160.6236 cm
+Q
+q
+1 0 0 1 62.69291 148.6236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Introduction of the assignment \(formal, no copy paste\).) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 142.6236 cm
+Q
+q
+1 0 0 1 62.69291 130.6236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Discussion of your implementation.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 124.6236 cm
+Q
+q
+1 0 0 1 62.69291 112.6236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Explanation of the design choices you made.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 106.6236 cm
+Q
+ 
+endstream
+endobj
+% 'R29': class PDFStream 
+29 0 obj
+% page stream
+<< /Length 3670 >>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 62.69291 729.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 21 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL .47229 Tw (Description and presentation of the experiments you performed. Small timing sets can be presented) Tj T* 0 Tw .291567 Tw (in tables. But if you would want to, for example, show the influence of the load factor on the different) Tj T* 0 Tw (hash implementations a graph would be better suited.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 723.0236 cm
+Q
+q
+1 0 0 1 62.69291 699.0236 cm
+0 0 0 rg
+BT /F1 10 Tf 12 TL ET
+q
+1 0 0 1 6 9 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL 10.5 0 Td (\177) Tj T* -10.5 0 Td ET
+Q
+Q
+q
+1 0 0 1 23 -3 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 1.234269 Tw (Conclusions: What conclusions can be made from the timings you performed. Try to explain what) Tj T* 0 Tw (you have observed. What problems did you encounter, and how did you solve them.) Tj T* ET
+Q
+Q
+q
+Q
+Q
+q
+1 0 0 1 62.69291 699.0236 cm
+Q
+q
+1 0 0 1 62.69291 681.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (Not counting tables and graphs the report should be around 2 pages long.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 648.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (Tips) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 582.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL 1.444269 Tw (Quadratic probing and double hash probing are the most difficult hashing techniques. There are some) Tj T* 0 Tw 1.711751 Tw (constraints on the hashing functions and the table size that should be met to make the probing work) Tj T* 0 Tw .74436 Tw (correctly. Implement the other hashing techniques first, and make sure you have time left to perform the) Tj T* 0 Tw .261654 Tw (timing experiments and write up your report. Spend your time wisely, it is better to have two working hash) Tj T* 0 Tw (table implementations and some timings results, than four buggy ones and no timings.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 552.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .308221 Tw (Turn on the compiler optimisations for the timing experiments and mention the flags that you used in your) Tj T* 0 Tw (report.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 522.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .017608 Tw (Create a small word list file and a text file that contain just a couple of words, and print the "spelling" errors) Tj T* 0 Tw (to make sure every hash implementation works correctly.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 492.0236 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL .73104 Tw (Don't print the spelling errors that you find on timing runs, as the I/O will influence the timing. Just count) Tj T* 0 Tw (the spelling errors that you encounter.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 459.0236 cm
+q
+BT 1 0 0 1 0 3.5 Tm 21 TL /F2 17.5 Tf 0 0 0 rg (References) Tj T* ET
+Q
+Q
+q
+1 0 0 1 62.69291 405.0236 cm
+q
+BT 1 0 0 1 0 38 Tm 12.97711 Tw 12 TL /F1 10 Tf 0 0 0 rg (Wikipedia has some good articles on hashing: ) Tj 0 0 .501961 rg (http://en.wikipedia.org/wiki/Hash_table) Tj 0 0 0 rg (,) Tj T* 0 Tw .064147 Tw 0 0 .501961 rg (http://en.wikipedia.org/wiki/Hash_function) Tj 0 0 0 rg (. You will also find a good explanation of hashing in the excellent) Tj T* 0 Tw .306412 Tw (book: "Introduction to Algorithms" by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford) Tj T* 0 Tw (Stein \() Tj 0 0 .501961 rg (http://mitpress.mit.edu/algorithms/) Tj 0 0 0 rg (\).) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+% 'R30': class PDFPageLabels 
+30 0 obj
+% Document Root
+<< /Nums [ 0
+ 31 0 R
+ 1
+ 32 0 R
+ 2
+ 33 0 R
+ 3
+ 34 0 R ] >>
+endobj
+% 'R31': class PDFPageLabel 
+31 0 obj
+% None
+<< /S /D
+ /St 1 >>
+endobj
+% 'R32': class PDFPageLabel 
+32 0 obj
+% None
+<< /S /D
+ /St 2 >>
+endobj
+% 'R33': class PDFPageLabel 
+33 0 obj
+% None
+<< /S /D
+ /St 3 >>
+endobj
+% 'R34': class PDFPageLabel 
+34 0 obj
+% None
+<< /S /D
+ /St 4 >>
+endobj
+xref
+0 35
+0000000000 65535 f
+0000000113 00000 n
+0000000257 00000 n
+0000000422 00000 n
+0000000597 00000 n
+0000000756 00000 n
+0000001037 00000 n
+0000001208 00000 n
+0000001401 00000 n
+0000001643 00000 n
+0000001956 00000 n
+0000002186 00000 n
+0000002501 00000 n
+0000002759 00000 n
+0000003020 00000 n
+0000003260 00000 n
+0000003580 00000 n
+0000003739 00000 n
+0000004000 00000 n
+0000004125 00000 n
+0000004296 00000 n
+0000004490 00000 n
+0000004677 00000 n
+0000004859 00000 n
+0000005039 00000 n
+0000005194 00000 n
+0000005327 00000 n
+0000012786 00000 n
+0000021310 00000 n
+0000026907 00000 n
+0000030680 00000 n
+0000030812 00000 n
+0000030889 00000 n
+0000030966 00000 n
+0000031043 00000 n
+trailer
+<< /ID 
+ % ReportLab generated PDF document -- digest (http://www.reportlab.com) 
+ [(h\037-p]r\302\277e%\325\023\012N\307\346) (h\037-p]r\302\277e%\325\023\012N\307\346)] 
+
+ /Info 17 0 R
+ /Root 16 0 R
+ /Size 35 >>
+startxref
+31090
+%%EOF
