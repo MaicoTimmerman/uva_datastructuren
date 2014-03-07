@@ -1,6 +1,4 @@
-typedef struct hash_t {
-    *table;
-};
+typedef struct hash_t hash_t;
 
 hash_t* hash_table_new(unsigned int size);
 void hash_table_destroy(hash_t* table);
