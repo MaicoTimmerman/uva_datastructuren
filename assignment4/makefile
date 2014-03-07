@@ -14,7 +14,7 @@ TABLESIZE=932587
 #TABLESIZE=684017
 #TABLESIZE=1502023
 
-all: spell-checker-glib spell-checker-chaining test-timing 
+all: spell-checker-glib spell-checker-chaining test-timing
 
 %.o: %.c
 	gcc $(CFLAGS) $< -c -o $@
@@ -30,7 +30,7 @@ libhash-glib.a: hash-glib.o
 spell-checker-glib: spell-checker.c libhash-glib.a
 	gcc spell-checker.c  -L. -lhash-glib `pkg-config --cflags --libs glib-2.0` $(CFLAGS) -o $@
 
-#glib library
+#Chaining library
 hash-chaining.o: hash-chaining.c
 	gcc $< -c $(CFLAGS)
 
@@ -39,7 +39,7 @@ libhash-chaining.a: hash-chaining.o
 
 .PHONY: spell-checker-chaining
 spell-checker-chaining: spell-checker.c libhash-chaining.a
-	gcc spell-checker.c  -L. -lhash-gchaining $(CFLAGS) -o $@
+	gcc spell-checker.c  -L. -lhash-chaining $(CFLAGS) -o $@
 
 .PHONY: spell-checker-probing
 spell-checker-probing:
