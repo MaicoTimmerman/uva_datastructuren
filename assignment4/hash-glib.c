@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <glib.h>
-
 #include "hash.h"
 
 // FIXME: 5k of reachable memory left.
@@ -13,7 +12,7 @@ struct hash_t {
 /* We cannot set the size in a glib hash table. So we ignore the
  * size parameter here. */
 hash_t* hash_table_new(unsigned int size __attribute__((unused)) ) {
-    hash_t *table = malloc (sizeof(hash_t));
+    hash_t *table = malloc(sizeof(hash_t));
     /* Use str_hash as hash function, and g_str_equal to compare the
      * keys. Use free function to free the keys, but don't free the
      * value placeholder. */
@@ -22,7 +21,7 @@ hash_t* hash_table_new(unsigned int size __attribute__((unused)) ) {
 }
 
 void hash_table_destroy(hash_t* table) {
-    g_hash_table_destroy (table->table);
+    g_hash_table_destroy(table->table);
     free(table);
 }
 

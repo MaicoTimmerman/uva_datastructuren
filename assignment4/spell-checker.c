@@ -27,7 +27,7 @@ int contains_numbers(char *word) {
     while (*word && !isdigit(*word)) {
         word++;
     }
-    return *word != '\0';
+    return (*word != '\0');
 }
 
 /* Convert a string to lowercase. */
@@ -47,7 +47,7 @@ int main(int argc, char *argv[]) {
 
     /* Shared token to store for every word in the hash table. */
     void *placeholder = malloc(1);
-    * (char *) placeholder = 'a';
+    *(char*)placeholder = 'a';
 
     if (!(argc == 4)) {
         printf("Usage: %s <wordfile> <text> <size>\n", argv[0]);
@@ -81,8 +81,7 @@ int main(int argc, char *argv[]) {
     }
     fclose(wordfile);
     printf("Hash table contains %d words\n", hash_table_fill(table));
-    printf("Hash table load factor %f\n",
-            (double)hash_table_fill(table)/hash_table_size(table));
+    printf("Hash table load factor %f\n",(double)hash_table_fill(table)/hash_table_size(table));
 
 
     // Read text file, and lookup every word in the hash table.
@@ -95,17 +94,18 @@ int main(int argc, char *argv[]) {
 
     word = strtok(textbuffer, DELIM); // prime strtok with textbuffer
     count = typo = 0;
-    lowercase = malloc(BUF_SIZE); // temporary buffer for lowercase word
+    lowercase = malloc (BUF_SIZE); // temporary buffer for lowercase word
     do {
         convert_to_lower(lowercase, word);
         /* Don't lookup words with numbers in them. */
-        if (!contains_numbers(lowercase) && !hash_table_lookup(table, lowercase)) {
+        if (!contains_numbers(lowercase) &&
+                !hash_table_lookup(table, lowercase)) {
             /* No printing when measuring execution time. */
             //printf("Not found: [%s]\n", lowercase);
             typo++;
         }
         count++;
-    } while ((word = strtok( NULL, DELIM)));
+    } while (word = strtok(NULL, DELIM));
     fclose(textfile);
 
     printf("words read %d\n", count);
