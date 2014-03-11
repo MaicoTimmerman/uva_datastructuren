@@ -56,7 +56,7 @@ int main(int argc, char *argv[]) {
     table_size = atoi(argv[3]);
     printf("Selected table size: %d\n", table_size);
 
-    // Setup input files wordlist file and textfile to check.
+    /* Setup input files wordlist file and textfile to check. */
     wordfile = fopen(argv[1], "r");
     if (!wordfile) {
         perror("Cannot open wordfile");
@@ -84,11 +84,11 @@ int main(int argc, char *argv[]) {
     printf("Hash table load factor %f\n",(double)hash_table_fill(table)/hash_table_size(table));
 
 
-    // Read text file, and lookup every word in the hash table.
+    /* Read text file, and lookup every word in the hash table. */
     textbuffer = malloc(TEXT_SIZE); // fixed max size
     assert(textbuffer);
     bytes_read = fread(textbuffer, 1, TEXT_SIZE, textfile);
-    // We need to null terminate the textbuffer, because fread doesn't
+    /* We need to null terminate the textbuffer, because fread doesn't */
     textbuffer[bytes_read] = '\0';
     printf("bytes read %d\n", bytes_read);
 
@@ -101,7 +101,7 @@ int main(int argc, char *argv[]) {
         if (!contains_numbers(lowercase) &&
                 !hash_table_lookup(table, lowercase)) {
             /* No printing when measuring execution time. */
-            //printf("Not found: [%s]\n", lowercase);
+            /* printf("Not found: [%s]\n", lowercase); */
             typo++;
         }
         count++;
