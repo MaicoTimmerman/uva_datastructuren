@@ -1,49 +1,49 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 #include "linked-list.h"
 
-linked_header_t* init_list() {
-    linked_header_t *header = malloc(sizeof(linked_header_t));
-    if (header) {
-        header->first = NULL;
-        header->size = 0;
-        return header;
+linked_node_t* init_list(char* key, char* value) {
+    linked_node_t* node = malloc(sizeof(linked_node_t));
+    if (node) {
+        node->value = value;
+        node->next = NULL;
+        node->key = key;
+        return node;
     }
     return NULL;
 }
 
-
-void add_node(linked_header_t *header,char* key, char* value) {
+linked_node_t* add_node(linked_node_t* previous, char* key, char* value) {
     linked_node_t *node = malloc(sizeof(linked_node_t));
     if (node) {
-        node->next = header->first;
+        node->next = previous;
         node->value = value;
         node->key = key;
-        header->first = node;
-        header->size += 1;
     }
+    return node;
 }
 
-void destroy_list(linked_header_t *header) {
-    linked_node_t *node;
+void destroy_list(linked_node_t *node) {
     linked_node_t *next;
-    node = header->first;
+    if (!node)
+        return;
     while (node) {
         next = node->next;
         free(node->value);
+        free(node->key);
         free(node);
         node = next;
     }
-    free(header);
 }
 
-void* search_element(linked_header_t* header, char* key) {
-    linked_node_t *node;
+void* search_element(linked_node_t* node, char* key) {
+    if (!node)
+        return NULL;
     linked_node_t *next;
-    node = header->first;
     while (node) {
-        if (*(node->key) == *key) {
+        if (strcmp(node->key, key)) {
             return node;
         }
         next = node->next;
@@ -52,6 +52,15 @@ void* search_element(linked_header_t* header, char* key) {
     return NULL;
 }
 
-unsigned int size_list(linked_header_t *header) {
-    return header->size;
+unsigned int size_list(linked_node_t *node) {
+    if (!node)
+        return 0;
+    linked_node_t *next;
+    unsigned int size = 0;
+    while (node) {
+        next = node->next;
+        node = next;
+        size++;
+    }
+    return size;
 }
