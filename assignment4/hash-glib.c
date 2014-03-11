@@ -25,12 +25,12 @@ void hash_table_destroy(hash_t* table) {
     free(table);
 }
 
-void hash_table_insert(hash_t* table, void* key, void* value) {
+void hash_table_insert(hash_t* table, char* key, char* value) {
     /* Will actually replace our token 'a' character. That's ok. */
     g_hash_table_insert(table->table, key, value);
 }
 
-void* hash_table_lookup(hash_t* table, void* key) {
+void* hash_table_lookup(hash_t* table, char* key) {
     return g_hash_table_lookup(table->table, key);
 }
 

@@ -7,14 +7,15 @@ PACK=tar -zcvf
 CP=cp -r
 RM=rm -rf
 CC=gcc
-#CFLAGS=-std=c99 -Wall -Wextra -pedantic -g3 -gdwarf-2
-CFLAGS=-std=c99 -Wall -Wextra -pedantic -O2
+# CFLAGS=-std=c99 -Wall -Wextra -pedantic -g3 -gdwarf-2
+CFLAGS=-std=c99 -ggdb -Wall -Wextra -pedantic -O2
 
 TABLESIZE=932587
 #TABLESIZE=684017
 #TABLESIZE=1502023
 
-all: spell-checker-glib spell-checker-chaining test-timing
+all: spell-checker-chaining
+# all: spell-checker-glib spell-checker-chaining test-timing
 
 %.o: %.c
 	gcc $(CFLAGS) $< -c -o $@
@@ -31,6 +32,12 @@ spell-checker-glib: spell-checker.c libhash-glib.a
 	gcc spell-checker.c  -L. -lhash-glib `pkg-config --cflags --libs glib-2.0` $(CFLAGS) -o $@
 
 #Chaining library
+linked-list.o: linked-list.c
+	gcc $< -c $(CFLAGS)
+
+liblinked-list.a: linked-list.o
+	ar rcs liblinked-list.a $<
+
 hash-chaining.o: hash-chaining.c
 	gcc $< -c $(CFLAGS)
 
@@ -38,23 +45,27 @@ libhash-chaining.a: hash-chaining.o
 	ar rcs libhash-chaining.a $<
 
 .PHONY: spell-checker-chaining
-spell-checker-chaining: spell-checker.c libhash-chaining.a
-	gcc spell-checker.c  -L. -lhash-chaining $(CFLAGS) -o $@
+spell-checker-chaining: spell-checker.c libhash-chaining.a liblinked-list.a
+	gcc spell-checker.c  -L. -lhash-chaining -llinked-list $(CFLAGS) -o $@
 
 .PHONY: spell-checker-probing
 spell-checker-probing:
 	@echo "Make it yourself!"
 
 .PHONY: run
-run: all
-	@echo "****** glib ******"
-	./spell-checker-glib input/british-english-insane.txt input/war-and-peace-ascii.txt $(TABLESIZE)
-	@echo "\n****** glib ******"
-	./spell-checker-glib input/british-english-insane.txt input/origin-of-species-ascii.txt $(TABLESIZE)
+run: spell-checker-glib spell-checker-chaining
+	# @echo "****** glib ******"
+	# ./spell-checker-glib input/british-english-insane.txt input/war-and-peace-ascii.txt $(TABLESIZE)
+	# @echo "\n****** glib ******"
+	# ./spell-checker-glib input/british-english-insane.txt input/origin-of-species-ascii.txt $(TABLESIZE)
+	@echo "\n****** chaining ******"
+	./spell-checker-chaining input/british-english-insane.txt input/war-and-peace-ascii.txt $(TABLESIZE)
+	@echo "\n****** chaining ******"
+	./spell-checker-chaining input/british-english-insane.txt input/origin-of-species-ascii.txt $(TABLESIZE)
 
 .PHONY: clean
 clean:
-	rm -f *.o *.a tags spell-checker-glib test-timing
+	rm -f *.o *.a tags spell-checker-* test-timing
 
 .PHONY: tarball
 tarball: $(PROGNAME)

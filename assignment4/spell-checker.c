@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
 
     word = strtok(textbuffer, DELIM); // prime strtok with textbuffer
     count = typo = 0;
-    lowercase = malloc (BUF_SIZE); // temporary buffer for lowercase word
+    lowercase = malloc(BUF_SIZE); // temporary buffer for lowercase word
     do {
         convert_to_lower(lowercase, word);
         /* Don't lookup words with numbers in them. */

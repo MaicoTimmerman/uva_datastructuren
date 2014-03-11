@@ -14,11 +14,12 @@ linked_header_t* init_list() {
 }
 
 
-void add_node(linked_header_t *header, void *value) {
+void add_node(linked_header_t *header,char* key, char* value) {
     linked_node_t *node = malloc(sizeof(linked_node_t));
     if (node) {
         node->next = header->first;
-        node->element = value;
+        node->value = value;
+        node->key = key;
         header->first = node;
         header->size += 1;
     }
@@ -30,25 +31,27 @@ void destroy_list(linked_header_t *header) {
     node = header->first;
     while (node) {
         next = node->next;
-        free(node->element);
+        free(node->value);
         free(node);
         node = next;
     }
     free(header);
 }
 
-unsigned int size_elements_list(linked_header_t *header) {
-    return header->size;
-}
-unsigned int size_raw_list(linked_header_t *header){
-    int total_bytes;
+void* search_element(linked_header_t* header, char* key) {
     linked_node_t *node;
     linked_node_t *next;
     node = header->first;
     while (node) {
+        if (*(node->key) == *key) {
+            return node;
+        }
         next = node->next;
-        total_bytes += sizeof(*(node->element));
-        total_bytes += sizeof(node);
         node = next;
     }
+    return NULL;
+}
+
+unsigned int size_list(linked_header_t *header) {
+    return header->size;
 }
