@@ -3,47 +3,34 @@
 #include <string.h>
 #include <assert.h>
 #include <ctype.h>
+#include <sys/resource.h>
 #include <time.h>
 
 #include "hash.h"
 
 #define BUF_SIZE 256
-
-/* TEXT_SIZE is the maximum size of the input text. */
 #define TEXT_SIZE  (6 * 1024 * 1024)
-
-/* Word seperators */
 #define DELIM " ,.:;\"-_(){}[]?!*^&'\n\t"
 
-/* Helper functions. */
-/* Print elapsed time in seconds. */
-void print_elapsed_clock(clock_t start, clock_t stop) {
-        printf("seconds:               %f\n",(float)(stop - start)/CLOCKS_PER_SEC);
-}
-
-/* Checks is word contains digits. So it can be ignored for spell
- * checking. */
-int contains_numbers(char *word) {
-    while (*word && !isdigit(*word)) {
-        word++;
-    }
-    return (*word != '\0');
-}
-
-/* Convert a string to lowercase. */
-void convert_to_lower(char *dest, char *src) {
-    for (; *src; ++src)
-        *dest++ = tolower(*src);
-    *dest = '\0';
-}
-
+void print_elapsed_ru(struct rusage start, struct rusage stop);
+void print_elapsed_clock(clock_t start, clock_t stop);
+void convert_to_lower(char *dest, char *src);
+double get_sec(struct timeval data);
+int contains_numbers(char *word);
 
 int main(int argc, char *argv[]) {
     unsigned int table_size;
     int bytes_read, count, typo, length;
     FILE *wordfile, *textfile;
     char *buf, *copy, *textbuffer, *word, *lowercase;
+
+    clock_t start, stop;
+    struct rusage start_tdata, stop_tdata;
     hash_t *table;
+
+    /* Starting measuring the timing */
+    start = clock();
+    getrusage(RUSAGE_SELF, &start_tdata);
 
     /* Shared token to store for every word in the hash table. */
     void *placeholder = malloc(1);
@@ -83,7 +70,6 @@ int main(int argc, char *argv[]) {
     printf("Hash table contains %d words\n", hash_table_fill(table));
     printf("Hash table load factor %f\n",(double)hash_table_fill(table)/hash_table_size(table));
 
-
     /* Read text file, and lookup every word in the hash table. */
     textbuffer = malloc(TEXT_SIZE); // fixed max size
     assert(textbuffer);
@@ -105,7 +91,7 @@ int main(int argc, char *argv[]) {
             typo++;
         }
         count++;
-    } while (word = strtok(NULL, DELIM));
+    } while ((word = strtok(NULL, DELIM)));
     fclose(textfile);
 
     printf("words read %d\n", count);
@@ -118,5 +104,49 @@ int main(int argc, char *argv[]) {
     free(placeholder);
     free(lowercase);
 
+    /* stop measuring the timing */
+    stop = clock();
+    getrusage(RUSAGE_SELF, &stop_tdata);
+    printf("cleanup Timings\n");
+    printf("clock() timing:\n");
+    print_elapsed_clock(start, stop);
+    printf("rusage() timing:\n");
+    print_elapsed_ru(start_tdata, stop_tdata);
+
     return 0;
+}
+
+/* Helper functions */
+void print_elapsed_ru(struct rusage start, struct rusage stop) {
+    double tuser, tsystem;
+    tuser = get_sec(stop.ru_utime) - get_sec(start.ru_utime);
+    tsystem = get_sec(stop.ru_stime) - get_sec(start.ru_stime);
+    printf("User cpu time (s):     %f\n", tuser);
+    printf("System cpu time (s):   %f\n", tsystem);
+    printf("Total cpu time (s):    %f\n", tuser + tsystem);
+}
+
+double get_sec(struct timeval data) {
+    return data.tv_sec + data.tv_usec/1000000.0;
+}
+
+void print_elapsed_clock(clock_t start, clock_t stop) {
+    printf("seconds:               %f\n",
+            (float)(stop - start)/CLOCKS_PER_SEC);
+}
+
+/* Checks is word contains digits. So it can be ignored for spell
+ * checking. */
+int contains_numbers(char *word) {
+    while (*word && !isdigit(*word)) {
+        word++;
+    }
+    return (*word != '\0');
+}
+
+/* Convert a string to lowercase. */
+void convert_to_lower(char *dest, char *src) {
+    for (; *src; ++src)
+        *dest++ = tolower(*src);
+    *dest = '\0';
 }
