@@ -64,8 +64,11 @@ int main() {
     printf("\nTiming malloc\n");
     start = clock();
     getrusage(RUSAGE_SELF, &start_tdata);
-    for (i = 0; i < NMALLOC; i++)
-        free(malloc(sizeof(int)*SMALLOC));
+    for (i = 0; i < NMALLOC; i++) {
+        int* a = malloc(sizeof(int)*SMALLOC);
+        *a = 1;
+        free(a);
+    }
     stop = clock();
     getrusage(RUSAGE_SELF, &stop_tdata);
 
