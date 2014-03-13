@@ -15,6 +15,7 @@
 #include "hash.h"
 
 typedef struct linked_node_t linked_node_t;
+
 struct linked_node_t {
     linked_node_t *next;
     char *key;
@@ -180,6 +181,7 @@ unsigned int hash_table_fill(hash_t* table) {
     linked_node_t* node;
     for (unsigned int i = 0; i < table->size; i++) {
         node = table->table[i];
+        /* For every node in the list increase total */
         while (node) {
             total_elements++;
             next = node->next;

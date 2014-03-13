@@ -7,14 +7,10 @@ PACK=tar -zcvf
 CP=cp -r
 RM=rm -rf
 CC=gcc
-# CFLAGS=-std=c99 -Wall -Wextra -pedantic -g3 -gdwarf-2
 CFLAGS=-std=c99 -ggdb -Wall -Wextra -pedantic -O2
 
 TABLESIZE=932587
-#TABLESIZE=684017
-#TABLESIZE=1502023
 
-# all: spell-checker-chaining
 all: spell-checker-glib spell-checker-probing spell-checker-chaining test-timing
 
 %.o: %.c
@@ -42,7 +38,7 @@ libhash-chaining.a: hash-chaining.o
 spell-checker-chaining: spell-checker.c libhash-chaining.a
 	$(CC) spell-checker.c  -L. -lhash-chaining $(CFLAGS) -o $@
 
-#Chaining library
+#probing library
 hash-probing.o: hash-probing.c
 	$(CC) $< -c $(CFLAGS)
 
@@ -72,14 +68,14 @@ run: spell-checker-glib spell-checker-probing spell-checker-chaining
 
 .PHONY: clean
 clean:
-	rm -f *.o *.a tags 
+	rm -f *.o *.a tags
 
 .PHONY: remove
 remove:
-	rm -f *.o *.a tags spell-checker-* test-timing
+	rm -f *.o *.a *.tar.gz tags spell-checker-* test-timing
 
 .PHONY: tarball
-tarball: $(PROGNAME)
+tarball: all
 	$(MAKE) remove
 	$(MKDIR) $(UVAID)_$(PROGNAME)
 	$(CP) * $(UVAID)_$(PROGNAME) || true
