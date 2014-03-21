@@ -6,12 +6,13 @@
 #include "maze.h"
 #include "tree.h"
 
-void print_elapsed_ru(struct rusage start, struct rusage stop);
+double print_elapsed_ru(struct rusage start, struct rusage stop);
 double get_sec(struct timeval data);
 
 int main (int argc, char** argv) {
 
-    clock_t start, stop;
+    double total_time;
+    int steps;
     struct rusage start_tdata, stop_tdata;
     maze_t* maze;
     tree_t* min_span_tree;
@@ -23,7 +24,6 @@ int main (int argc, char** argv) {
     }
 
     /* Starting timings */
-    start = clock();
     getrusage(RUSAGE_SELF, &start_tdata);
 
     /* Read maze */
@@ -41,7 +41,7 @@ int main (int argc, char** argv) {
 
     min_span_tree = create_spanning_tree(maze);
     print_tree(min_span_tree, "tree.dot");
-    mark_shortest_path(min_span_tree, end, maze);
+    steps = mark_shortest_path(min_span_tree, end, maze);
 
     /* Print maze with shortest path marked. */
     print_maze(maze, -1, -1);
@@ -51,22 +51,24 @@ int main (int argc, char** argv) {
     free(end);
 
     /* End timings */
-    stop = clock();
     getrusage(RUSAGE_SELF, &stop_tdata);
 
-    printf("seconds: %f\n", (float)(stop-start)/CLOCKS_PER_SEC);
-    print_elapsed_ru(start_tdata, stop_tdata);
+    total_time = print_elapsed_ru(start_tdata, stop_tdata);
+    printf("Average time per square: %lf\n", total_time / (maze->nrows * maze->ncols));
+    printf("Length of shortest path: %d\n", steps);
+    printf("Oppervlakte of maze: %d\n", (maze->nrows * maze->ncols));
     return 0;
 }
 
 /* Helper functions for timing */
-void print_elapsed_ru(struct rusage start, struct rusage stop) {
+double print_elapsed_ru(struct rusage start, struct rusage stop) {
     double tuser, tsystem;
     tuser = get_sec(stop.ru_utime) - get_sec(start.ru_utime);
     tsystem = get_sec(stop.ru_stime) - get_sec(start.ru_stime);
     printf("User cpu time (s):     %f\n", tuser);
     printf("System cpu time (s):   %f\n", tsystem);
     printf("Total cpu time (s):    %f\n", tuser + tsystem);
+    return tsystem;
 }
 
 double get_sec(struct timeval data) {

@@ -202,10 +202,11 @@ tree_t* new_tree_node(tree_t* parent, int row, int col) {
  * @param tree_t* root; Pointer to the root of the new tree structure.
  * @param location_t* exit; location of the exit to search for in the tree.
  * @param maze_t* maze; Pointer to the maze structure to mark the shortest path in
- * @returns tree_t*; Pointer to the new initialized structure.
+ * @returns int; number of steps from start to finish.
  */
 int mark_shortest_path(tree_t* root, location_t* exit, maze_t* maze) {
 
+    int n_steps = 0;
     queue_node_t* queue;
     tree_t* node;
 
@@ -223,6 +224,7 @@ int mark_shortest_path(tree_t* root, location_t* exit, maze_t* maze) {
          */
         if (node->location->row == exit->row && node->location->col == exit->col) {
             while (node) {
+                n_steps++;
                 maze->map[node->location->row][node->location->col] = PATH;
                 node = node->parent;
             }
@@ -235,7 +237,7 @@ int mark_shortest_path(tree_t* root, location_t* exit, maze_t* maze) {
                 dequeue(queue);
             }
             free(queue);
-            return 1;
+            return n_steps;
         }
         /* The node was not the current node, so add all his children. */
         for (int i = 0; i < node->n_children; i++) {
@@ -243,7 +245,7 @@ int mark_shortest_path(tree_t* root, location_t* exit, maze_t* maze) {
         }
     }
     free(queue);
-    return 0;
+    return n_steps;
 }
 
 /*
