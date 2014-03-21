@@ -19,8 +19,8 @@ struct tree_t {
 };
 
 tree_t* create_spanning_tree(maze_t *maze);
-void print_tree(tree_t *root, char *filename);
+void print_tree(tree_t* root, char* filename);
 tree_t* new_tree_node(tree_t* parent, int row, int col);
-int mark_shortest_path(tree_t *node, location_t *exit, maze_t *maze);
-void cleanup_tree(tree_t *node);
+int mark_shortest_path(tree_t* node, location_t* exit, maze_t* maze);
+void cleanup_tree(tree_t* node);
 #endif /* TREE_H */

@@ -15,7 +15,7 @@
 #define PATH    '.'
 
 typedef struct {
-    char **map; // use as map[row][col]
+    char** map; // use as map[row][col]
     int nrows;
     int ncols;
     int start_row, start_col;
@@ -24,7 +24,7 @@ typedef struct {
 
 
 maze_t* init_maze(int nrows, int ncols);
-maze_t* read_maze(char *filename);
+maze_t* read_maze(char* filename);
 void print_maze(maze_t* maze, int p_row, int p_col);
 void cleanup_maze(maze_t* m);
 

@@ -11,7 +11,7 @@
 maze_t* init_maze(int nrows, int ncols) {
     int r;
 
-    maze_t *maze = malloc(sizeof (maze_t));
+    maze_t* maze = malloc(sizeof (maze_t));
     assert(maze);
     maze->nrows = nrows;
     maze->ncols = ncols;
@@ -50,7 +50,7 @@ void check_symbol(char c, int edge) {
 
 
 /* Read maze from file. */
-maze_t* read_maze(char *filename) {
+maze_t* read_maze(char* filename) {
 
     int row, col, n;
     int nrows, ncols;

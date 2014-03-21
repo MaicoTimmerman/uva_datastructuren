@@ -30,8 +30,8 @@ tree_t* create_spanning_tree(maze_t *maze) {
     enqueue(queue, root);
 
     int row, col;
-    tree_t *new_node;
-    tree_t *node;
+    tree_t* new_node;
+    tree_t* node;
 
     /*
      * While the queue is not empty take the first item
@@ -126,11 +126,11 @@ tree_t* create_spanning_tree(maze_t *maze) {
  * @param char* filename; A filename to print the graph to.
  * @returns; void.
  */
-void print_tree(tree_t *root, char *filename) {
+void print_tree(tree_t* root, char* filename) {
 
-    FILE *fp;
+    FILE* fp;
     queue_node_t* queue;
-    tree_t *node;
+    tree_t* node;
 
     fp = fopen(filename, "w");
 
@@ -204,10 +204,10 @@ tree_t* new_tree_node(tree_t* parent, int row, int col) {
  * @param maze_t* maze; Pointer to the maze structure to mark the shortest path in
  * @returns tree_t*; Pointer to the new initialized structure.
  */
-int mark_shortest_path(tree_t *root, location_t *exit, maze_t *maze) {
+int mark_shortest_path(tree_t* root, location_t* exit, maze_t* maze) {
 
     queue_node_t* queue;
-    tree_t *node;
+    tree_t* node;
 
     /* Add the root to the queue */
     queue = new_queue();
@@ -256,7 +256,7 @@ int mark_shortest_path(tree_t *root, location_t *exit, maze_t *maze) {
  */
 void cleanup_tree(tree_t *root) {
     queue_node_t* queue;
-    tree_t *node;
+    tree_t* node;
 
     /* Add the root tot the queue */
     queue = new_queue();
@@ -276,4 +276,3 @@ void cleanup_tree(tree_t *root) {
     free(queue);
     return;
 }
-
