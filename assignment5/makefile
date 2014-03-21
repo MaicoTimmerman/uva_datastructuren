@@ -21,13 +21,17 @@ $(PROGNAME): $(OFILES)
 run: $(PROGNAME)
 	./$(PROGNAME) map1.txt
 
+.PHONY: tree
+tree: $(PROGNAME)
+	dot -Tpng tree.dot > tree.png
+
 .PHONY: clean
 clean:
 	$(RM) *.o tags $(UVAID)_$(PROGNAME).tar.gz
 
 .PHONY: remove
 remove:
-	$(RM) *.o tags $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz
+	$(RM) *.o tags $(PROGNAME) $(UVAID)_$(PROGNAME).tar.gz tree.dot tree.png
 
 .PHONY: tarball
 tarball: $(PROGNAME)

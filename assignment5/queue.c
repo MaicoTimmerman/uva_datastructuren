@@ -46,3 +46,12 @@ void* dequeue(queue_node_t* q) {
 
     return val;
 }
+
+void cleanup_queue(queue_node_t* queue) {
+    void* val;
+    while (!is_empty(queue)) {
+        val = dequeue(queue);
+        free(val);
+    }
+    free(queue);
+}

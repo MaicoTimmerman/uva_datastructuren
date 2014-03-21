@@ -15,26 +15,23 @@ tree_t* create_spanning_tree(maze_t *maze) {
     /* Initialize root of the tree */
     tree_t* root = new_tree_node(NULL, maze->start_row, maze->start_col);
     enqueue(queue, root);
-    fprintf(stderr, "**maze->map[%d][%d]: %c;\n",maze->start_row, maze->start_col, maze->map[maze->start_row][maze->start_col]);
 
     int row, col;
-    tree_t *node = NULL;
     tree_t *new_node;
+    tree_t *node;
 
-    /* For every node in the queue get all neightbours and add them to the tree and queue. */
-    // FIXME: Adding nodes and fix realloc crash
+    /* While the queue is not empty take the first item in the queue and get all not used neightbours. */
     while (!is_empty(queue)) {
         if (!(node = (struct tree_t*)dequeue(queue))) {
             break;
-            fprintf(stderr, "BREAK\n");
         }
-        fprintf(stderr, "node: %p\n", (void*)node);
-        fprintf(stderr, "node->location: %p\n", (void*)node->location);
         row = node->location->row;
         col = node->location->col;
 
-
-        /* Find all 4 sides, enqueue them, add them to the tree and mark them temporary. */
+        /*
+         * Find all 4 sides, enqueue them, add them to the tree
+         * Mark them temporary as used so the following node wont take it as nearest.
+         */
         switch (maze->map[row+1][col]) {
             case WALL:
             case START:
@@ -42,7 +39,6 @@ tree_t* create_spanning_tree(maze_t *maze) {
                 break;
             case EXIT:
             case OPEN:
-                fprintf(stderr, "maze->map[%d][%d]: %c;\n",row+1, col, maze->map[row+1][col]);
                 maze->map[row+1][col] = '@';
                 new_node = new_tree_node(node, row+1, col);
                 enqueue(queue, new_node);
@@ -56,7 +52,6 @@ tree_t* create_spanning_tree(maze_t *maze) {
                 break;
             case EXIT:
             case OPEN:
-                fprintf(stderr, "maze->map[%d][%d]: %c;\n",row-1, col, maze->map[row-1][col]);
                 maze->map[row-1][col] = '@';
                 new_node = new_tree_node(node, row-1, col);
                 enqueue(queue, new_node);
@@ -70,7 +65,6 @@ tree_t* create_spanning_tree(maze_t *maze) {
                 break;
             case EXIT:
             case OPEN:
-                fprintf(stderr, "maze->map[%d][%d]: %c;\n",row, col+1, maze->map[row][col+1]);
                 maze->map[row][col+1] = '@';
                 new_node = new_tree_node(node, row, col+1);
                 enqueue(queue, new_node);
@@ -84,7 +78,6 @@ tree_t* create_spanning_tree(maze_t *maze) {
                 break;
             case EXIT:
             case OPEN:
-                fprintf(stderr, "maze->map[%d][%d]: %c;\n",row, col-1, maze->map[row][col-1]);
                 maze->map[row][col-1] = '@';
                 new_node = new_tree_node(node, row, col-1);
                 enqueue(queue, new_node);
@@ -94,20 +87,25 @@ tree_t* create_spanning_tree(maze_t *maze) {
         }
 
     }
+    /* Remove all the markers */
     for (int i = 0; i < maze->nrows; i++) {
         for (int j = 0; j < maze->ncols; j++) {
             if (maze->map[i][j] == '@')
                 maze->map[i][j] = OPEN;
         }
     }
+
+    /* Set the exit back */
     maze->map[maze->end_row][maze->end_col] = EXIT;
+    cleanup_queue(queue);
     return root;
 }
 
 void print_tree(tree_t *root, char *filename) {
+
     FILE *fp;
     queue_node_t* queue;
-    tree_t *node = NULL;
+    tree_t *node;
 
     fp = fopen(filename, "w");
 
@@ -122,61 +120,89 @@ void print_tree(tree_t *root, char *filename) {
             break;
         for (int i = 0; i < node->n_children; i++) {
             enqueue(queue, node->children[i]);
-            if (node->parent) {
-                fprintf(fp, "\t\"%d,%d\" -> \"%d,%d\"\n",
-                        node->parent->location->col,
-                        node->parent->location->row,
-                        node->location->col,
-                        node->location->row);
-            }
+            fprintf(fp, "\t\"%d,%d\" -> \"%d,%d\"\n",
+                    node->location->col,
+                    node->location->row,
+                    node->children[i]->location->col,
+                    node->children[i]->location->row);
         }
     }
     fprintf(fp, "}\n");
-
-    char* unixcommand = strcat("dot -Tpng ", strcat(filename,  strcat(" > ", strcat(filename, ".png"))));
-    fprintf(stdout, "%s", unixcommand);
-    system(unixcommand);
-
     fclose(fp);
-
+    cleanup_queue(queue);
 }
 
 tree_t* new_tree_node(tree_t* parent, int row, int col) {
+
+    /* Create a new node and set its data. */
     tree_t* tree = malloc(sizeof(tree_t));
+    assert(tree);
     tree->location = malloc(sizeof(location_t));
+    assert(tree->location);
     tree->location->row = row;
     tree->location->col = col;
     tree->parent = parent;
+    tree->children = NULL;
     tree->n_children = 0;
 
-    fprintf(stderr, "Creating new node, (%d,%d) at %p\n", row, col, (void*)tree);
-    fprintf(stderr, "parent: %p\n", (void*)parent);
-
-
+    /* If a parent was given(no root node), then add it to the parent as child */
     if (parent) {
-        fprintf(stderr, "parent->children test: %p\n", (void*)parent->children);
-        if (parent->children) {
-            tree_t** temp_ptr = realloc(parent->children, sizeof(tree_t*) * ++(parent->n_children));
-            assert(temp_ptr);
-            parent->children = temp_ptr;
-            fprintf(stderr, "parent->children realloc'd: %p\n", (void*)parent->children);
-            fprintf(stderr, "realloc succes!\n");
-        } else {
-            parent->children = malloc(sizeof(tree_t*) * ++(parent->n_children));
-            fprintf(stderr, "parent->children malloc'd: %p\n", (void*)parent->children);
-        }
+        tree_t** temp_ptr = realloc(parent->children, sizeof(tree_t*) * ++(parent->n_children));
+        assert(temp_ptr);
+        parent->children = temp_ptr;
         parent->children[(parent->n_children) - 1] = tree;
     }
-    fprintf(stderr, "\n");
     return tree;
 }
 
 /* Implement a search algorithm throught the tree */
-/* int mark_shortest_path(tree_t *node, location_t *exit, maze_t *maze) { */
-/*     return 1; */
-/* } */
-/*  */
-/* void cleanup_tree(tree_t *node) { */
-/*     return; */
-/* } */
+int mark_shortest_path(tree_t *root, location_t *exit, maze_t *maze) {
+
+    queue_node_t* queue;
+    tree_t *node;
+
+    queue = new_queue();
+    enqueue(queue, root);
+
+    while (!is_empty(queue)) {
+        if (!(node = (struct tree_t*)dequeue(queue)))
+            break;
+        if (node->location->row == exit->row && node->location->col == exit->col) {
+            while (node) {
+                maze->map[node->location->row][node->location->col] = PATH;
+                node = node->parent;
+            }
+            maze->map[maze->end_row][maze->end_col] = EXIT;
+            maze->map[maze->start_row][maze->start_col] = START;
+            cleanup_queue(queue);
+            return 1;
+        }
+        for (int i = 0; i < node->n_children; i++) {
+            enqueue(queue, node->children[i]);
+        }
+    }
+    cleanup_queue(queue);
+    return 0;
+}
+
+void cleanup_tree(tree_t *root) {
+    queue_node_t* queue;
+    tree_t *node;
+
+    queue = new_queue();
+    enqueue(queue, root);
+
+    while (!is_empty(queue)) {
+        if (!(node = (struct tree_t*)dequeue(queue)))
+            break;
+        for (int i = 0; i < node->n_children; i++) {
+            enqueue(queue, node->children[i]);
+        }
+        free(node->location);
+        free(node->children);
+        free(node);
+    }
+    cleanup_queue(queue);
+    return;
+}
 
