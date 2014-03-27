@@ -46,10 +46,6 @@ int main (int argc, char** argv) {
     /* Print maze with shortest path marked. */
     print_maze(maze, -1, -1);
 
-    cleanup_tree(min_span_tree);
-    cleanup_maze(maze);
-    free(end);
-
     /* End timings */
     getrusage(RUSAGE_SELF, &stop_tdata);
 
@@ -57,7 +53,12 @@ int main (int argc, char** argv) {
     printf("Average time per square: %lf\n", total_time / (maze->nrows * maze->ncols));
     printf("Length of shortest path: %d\n", steps);
     printf("Oppervlakte of maze: %d\n", (maze->nrows * maze->ncols));
-    return 0;
+
+    cleanup_tree(min_span_tree);
+    cleanup_maze(maze);
+    free(end);
+
+    return EXIT_SUCCESS;
 }
 
 /* Helper functions for timing */

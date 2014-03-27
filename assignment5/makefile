@@ -19,7 +19,7 @@ $(PROGNAME): $(OFILES)
 
 .PHONY: run
 run: $(PROGNAME)
-	./$(PROGNAME) map1.txt
+	./$(PROGNAME) map4.txt
 
 .PHONY: tree
 tree: $(PROGNAME)
